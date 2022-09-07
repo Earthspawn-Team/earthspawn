@@ -1,6 +1,7 @@
 package net.earthspawn.mod;
 
 import com.mojang.logging.LogUtils;
+import net.earthspawn.mod.blocks.BlockRegister;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -15,7 +16,11 @@ public class Earthspawn {
 
     public Earthspawn() {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
+        registerContent();
+    }
 
+    private void registerContent() {
+        BlockRegister.registerBus();
         MinecraftForge.EVENT_BUS.register(this);
     }
 
