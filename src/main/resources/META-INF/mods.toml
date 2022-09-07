@@ -1,0 +1,28 @@
+modLoader = "javafml"
+loaderVersion = "[40,)"
+license = "All Rights Reserved"
+#issueTrackerURL="http://my.issue.tracker/"
+[[mods]]
+modId = "earthspawn"
+version = "${file.jarVersion}"
+displayName = "Earthspawn"
+#updateJSONURL="http://myurl.me/"
+#displayURL="http://example.com/"
+#logoFile="earthspawn.png"
+#credits="Thanks for this example mod goes to Java"
+authors = "Chipser, Xscreade"
+description = '''
+An adventure and exploration mod for new versions of Minecraft!
+'''
+[[dependencies.earthspawn]]
+modId = "forge"
+mandatory = true
+versionRange = "[40,)"
+ordering = "NONE"
+side = "BOTH"
+[[dependencies.earthspawn]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.18.2,1.19)"
+ordering = "NONE"
+side = "BOTH"
