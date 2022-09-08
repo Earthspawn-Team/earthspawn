@@ -1,9 +1,10 @@
 package net.earthspawn.mod.items;
 
 import net.earthspawn.mod.Earthspawn;
+import net.earthspawn.mod.items.armors.ArmorTiers;
 import net.earthspawn.mod.tabs.EarthspawnTab;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Rarity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -19,10 +20,25 @@ public class ItemRegister {
         ITEMS.register(bus);
     }
 
-    public static final RegistryObject<Item> TOPAZ = ITEMS.register("topaz", () -> new Item(new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
-    public static final RegistryObject<Item> CRYSTAL = ITEMS.register("crystal", () -> new Item(new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB).rarity(Rarity.RARE)));
-    public static final RegistryObject<Item> CRYSTAL_SHARD = ITEMS.register("crystal_shard", () -> new Item(new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
-    public static final RegistryObject<Item> ASTRAL_DUST = ITEMS.register("astral_dust", () -> new Item(new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
-    public static final RegistryObject<Item> CHARGED_CRYSTAL = ITEMS.register("charged_crystal", () -> new Item(new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB).rarity(Rarity.EPIC)));
-    public static final RegistryObject<Item> UNICORN_HORN = ITEMS.register("unicorn_horn", () -> new Item(new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
+    //items
+    public static final RegistryObject<Item> TOPAZ = ITEMS.register("topaz", () -> new Item(EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> CRYSTAL = ITEMS.register("crystal", () -> new Item(EarthspawnTab.itemTabProperties().rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> CRYSTAL_SHARD = ITEMS.register("crystal_shard", () -> new Item(EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> ASTRAL_DUST = ITEMS.register("astral_dust", () -> new Item(EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> CHARGED_CRYSTAL = ITEMS.register("charged_crystal", () -> new Item(EarthspawnTab.itemTabProperties().rarity(Rarity.EPIC)));
+    public static final RegistryObject<Item> UNICORN_HORN = ITEMS.register("unicorn_horn", () -> new Item(EarthspawnTab.itemTabProperties()));
+
+    //topaz tier
+    public static final RegistryObject<Item> TOPAZ_SWORD = ITEMS.register("topaz_sword",
+            () -> new SwordItem(ItemTiers.TOPAZ, 3, -2.4F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> TOPAZ_PICKAXE = ITEMS.register("topaz_pickaxe",
+            () -> new PickaxeItem(ItemTiers.TOPAZ, 1, -2.8F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> TOPAZ_HELMET = ITEMS.register("topaz_helmet",
+            () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.HEAD, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> TOPAZ_CHESTPLATE = ITEMS.register("topaz_chestplate",
+            () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.CHEST, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> TOPAZ_LEGGINGS = ITEMS.register("topaz_leggings",
+            () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.LEGS, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> TOPAZ_BOOTS = ITEMS.register("topaz_boots",
+            () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.FEET, EarthspawnTab.itemTabProperties()));
 }

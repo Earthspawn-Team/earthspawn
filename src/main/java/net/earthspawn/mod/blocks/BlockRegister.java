@@ -29,7 +29,7 @@ public class BlockRegister {
     @SubscribeEvent
     public static void createBlocksItems(final RegistryEvent.Register<Item> event) {
         BlockRegister.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block ->
-                event.getRegistry().register(new BlockItem(block, new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)).setRegistryName(Objects.requireNonNull(block.getRegistryName()))));
+                event.getRegistry().register(new BlockItem(block, EarthspawnTab.itemTabProperties()).setRegistryName(Objects.requireNonNull(block.getRegistryName()))));
     }
 
     public static final RegistryObject<Block> HALLOW_GRASS = BLOCKS.register("hallow_grass", () -> BlockProperties.getBlockProperties(Blocks.GRASS_BLOCK));
