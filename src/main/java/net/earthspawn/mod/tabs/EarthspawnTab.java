@@ -6,11 +6,11 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
-public class EarthspawnCreativeTab extends CreativeModeTab {
+public class EarthspawnTab extends CreativeModeTab {
 
-    public static final EarthspawnCreativeTab EARTHSPAWN_CREATIVE_TAB = new EarthspawnCreativeTab(Earthspawn.MOD_ID);
+    public static final EarthspawnTab CREATIVE_TAB = new EarthspawnTab(Earthspawn.MOD_ID);
 
-    public EarthspawnCreativeTab(String label) {
+    public EarthspawnTab(String label) {
         super(label);
     }
 

@@ -3,5 +3,15 @@
 
   "block.earthspawn.hallow_grass": "Hallow Grass",
   "block.earthspawn.hallow_dirt": "Hallow Dirt",
-  "block.earthspawn.gladiolus": "Gladiolus"
+  "block.earthspawn.gladiolus": "Gladiolus",
+  "block.earthspawn.hallow_roots": "Hallow Roots",
+  "block.earthspawn.amaryllis": "Amaryllis",
+  "block.earthspawn.topaz_ore": "Topaz Ore",
+
+  "item.earthspawn.topaz": "Topaz",
+  "item.earthspawn.crystal": "Crystal",
+  "item.earthspawn.crystal_shard": "Crystal Shard",
+  "item.earthspawn.astral_dust": "Astral Dust",
+  "item.earthspawn.charged_crystal": "Charged Crystal",
+  "item.earthspawn.unicorn_horn": "Unicorn Horn"
 }

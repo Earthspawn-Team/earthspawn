@@ -1,10 +1,11 @@
 package net.earthspawn.mod;
 
 import com.mojang.logging.LogUtils;
-import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
 import net.earthspawn.mod.entities.renderers.OuliskRenderer;
+import net.earthspawn.mod.blocks.BlockRegister;
+import net.earthspawn.mod.items.ItemRegister;
 import net.earthspawn.mod.setup.ClientEventBusSubscriber;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.common.MinecraftForge;
@@ -34,10 +35,9 @@ public class Earthspawn {
 
         BlockRegister.registerSetup(bus);
         EntitiesRegister.register(bus);
-
         bus.addListener(this::clientSetup);
-
         GeckoLib.initialize();
+        ItemRegister.registerSetup(bus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 
