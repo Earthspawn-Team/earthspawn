@@ -27,7 +27,11 @@ public class OuliskRenderer extends GeoEntityRenderer<OuliskEntity> {
     public RenderType getRenderType(OuliskEntity animatable, float partialTicks, PoseStack stack,
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
-        stack.scale(1.0f, 1.0f, 1.0f);
+        if (animatable.isBaby()) {
+            stack.scale(0.5f, 0.5f, 0.5f);
+        } else {
+            stack.scale(1.0f, 1.0f, 1.0f);
+        }
         return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }
 }
