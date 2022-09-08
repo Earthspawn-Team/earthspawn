@@ -2,6 +2,7 @@ package net.earthspawn.mod;
 
 import com.mojang.logging.LogUtils;
 import net.earthspawn.mod.blocks.BlockRegister;
+import net.earthspawn.mod.items.ItemRegister;
 import net.earthspawn.mod.setup.ClientEventBusSubscriber;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,7 @@ public class Earthspawn {
         bus.addListener(ClientEventBusSubscriber::clientRegisterSetup);
 
         BlockRegister.registerSetup(bus);
+        ItemRegister.registerSetup(bus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 }
