@@ -6,7 +6,6 @@ import net.earthspawn.mod.setup.ClientEventBusSubscriber;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
@@ -17,19 +16,15 @@ public class Earthspawn {
     public static final String MOD_ID = "earthspawn";
 
     public Earthspawn() {
+        LOGGER.debug("Earthspawn Pre-init Setup");
         registerContent();
     }
 
     private void registerContent() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        bus.addListener(this::setup);
         bus.addListener(ClientEventBusSubscriber::clientRegisterSetup);
 
         BlockRegister.registerSetup(bus);
         MinecraftForge.EVENT_BUS.register(this);
-    }
-
-    private void setup(final FMLCommonSetupEvent event) {
-        LOGGER.info("[Earthspawn] Pre-init mod loading");
     }
 }
