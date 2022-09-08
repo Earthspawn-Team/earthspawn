@@ -1,5 +1,6 @@
 package net.earthspawn.mod.entities.classes;
 
+import net.earthspawn.mod.entities.EntitiesRegister;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -7,7 +8,9 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
+import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
@@ -33,7 +36,7 @@ public class OuliskEntity extends Animal implements IAnimatable {
                 .add(Attributes.MAX_HEALTH, 20.0D)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f)
                 .add(Attributes.ATTACK_SPEED, 2.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.15f)
+                .add(Attributes.MOVEMENT_SPEED, 0.20f)
                 .build();
     }
 
@@ -41,7 +44,6 @@ public class OuliskEntity extends Animal implements IAnimatable {
         this.goalSelector.addGoal(0, new FloatGoal(this));
         this.goalSelector.addGoal(1, new PanicGoal(this, 1.25D));
         this.goalSelector.addGoal(3, new BreedGoal(this, 1.0D));
-        this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, Ingredient.of(Items.CARROT_ON_A_STICK), false));
         this.goalSelector.addGoal(4, new TemptGoal(this, 1.2D, FOOD_ITEMS, false));
         this.goalSelector.addGoal(5, new FollowParentGoal(this, 1.1D));
         this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 1.0D));
@@ -51,8 +53,8 @@ public class OuliskEntity extends Animal implements IAnimatable {
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
-        return null;
+    public OuliskEntity getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
+        return EntitiesRegister.OULISK.get().create(serverLevel);
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
@@ -69,6 +71,10 @@ public class OuliskEntity extends Animal implements IAnimatable {
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController(this, "controller",
                 0, this::predicate));
+    }
+
+    public boolean isFood(ItemStack p_29508_) {
+        return FOOD_ITEMS.test(p_29508_);
     }
 
     @Override
