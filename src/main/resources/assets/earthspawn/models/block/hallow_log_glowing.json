@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "earthspawn:blocks/hallow_log_top",
+    "up": "earthspawn:blocks/hallow_log_top",
+    "north": "earthspawn:blocks/hallow_log_side",
+    "east": "earthspawn:blocks/hallow_log_side",
+    "south": "earthspawn:blocks/hallow_log_side",
+    "west": "earthspawn:blocks/hallow_log_side",
+    "particle": "earthspawn:blocks/hallow_log_side"
+  }
+}
