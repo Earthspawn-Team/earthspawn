@@ -4,8 +4,10 @@ import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
+import net.earthspawn.mod.entities.renderers.OuliskRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -16,8 +18,10 @@ public class ClientEventBusSubscriber {
 
     @SubscribeEvent
     public static void clientRegisterSetup(FMLClientSetupEvent event) {
+        //entity render setup
+        EntityRenderers.register(EntitiesRegister.OULISK.get(), OuliskRenderer::new);
 
-        //transparent block render
+        //transparent block render setup
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.GLADIOLUS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.HALLOW_ROOTS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.AMARYLLIS.get(), RenderType.cutout());
