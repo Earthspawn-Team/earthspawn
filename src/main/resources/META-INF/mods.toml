@@ -12,8 +12,7 @@ logoFile="earthspawn.png"
 #credits="Thanks for this example mod goes to Java"
 authors = "Chipser, Xscreade"
 description = '''
-An adventure and exploration mod for new versions of Minecraft!
-'''
+An adventure and exploration mod for new versions of Minecraft!'''
 [[dependencies.earthspawn]]
 modId = "forge"
 mandatory = true

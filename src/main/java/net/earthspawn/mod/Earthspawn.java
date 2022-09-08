@@ -29,7 +29,7 @@ public class Earthspawn {
 
         GeckoLib.initialize();
         BlockRegister.registerSetup(bus);
-        EntitiesRegister.register(bus);
+        EntitiesRegister.registerSetup(bus);
         ItemRegister.registerSetup(bus);
         MinecraftForge.EVENT_BUS.register(this);
     }
