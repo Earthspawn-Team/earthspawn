@@ -1,5 +1,7 @@
 {
   "itemGroup.earthspawn":  "Earthspawn",
 
-  "block.earthspawn.hallow_grass": "Hallow Grass"
+  "block.earthspawn.hallow_grass": "Hallow Grass",
+  "block.earthspawn.hallow_dirt": "Hallow Dirt",
+  "block.earthspawn.gladiolus": "Gladiolus"
 }
