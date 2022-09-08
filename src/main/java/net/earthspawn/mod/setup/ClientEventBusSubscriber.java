@@ -13,7 +13,11 @@ public class ClientEventBusSubscriber {
 
     @SubscribeEvent
     public static void clientRegisterSetup(FMLClientSetupEvent event) {
+
+        //transparent block render
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.GLADIOLUS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockRegister.HALLOW_ROOTS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockRegister.AMARYLLIS.get(), RenderType.cutout());
     }
 
 }
