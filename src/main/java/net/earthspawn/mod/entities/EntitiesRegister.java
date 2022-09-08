@@ -15,7 +15,7 @@ public class EntitiesRegister {
 
     public static final RegistryObject<EntityType<OuliskEntity>> OULISK = ENTITY_TYPES.register("oulisk",
             () -> EntityType.Builder.of(OuliskEntity::new, MobCategory.CREATURE)
-                    .sized(1.0f, 1.0f)
+                    .sized(1.5f, 1.5f)
                     .build(new ResourceLocation(Earthspawn.MOD_ID, "oulisk").toString()));
 
     public static void registerSetup(IEventBus bus) {
