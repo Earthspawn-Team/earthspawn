@@ -1,0 +1,21 @@
+{
+  "group": "earthspawn",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#D#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "earthspawn:astral_dust"
+    },
+    "D": {
+      "item": "earthspawn:crystal"
+    }
+  },
+  "result": {
+    "item": "earthspawn:charged_crystal",
+    "count": 1
+  }
+}

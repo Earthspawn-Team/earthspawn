@@ -1,0 +1,26 @@
+{
+  "group": "earthspawn",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "01",
+    "23"
+  ],
+  "key": {
+    "0": {
+      "item": "earthspawn:crystal_shard"
+    },
+    "1": {
+      "item": "earthspawn:crystal_shard"
+    },
+    "2": {
+      "item": "earthspawn:crystal_shard"
+    },
+    "3": {
+      "item": "earthspawn:crystal_shard"
+    }
+  },
+  "result": {
+    "item": "earthspawn:crystal",
+    "count": 1
+  }
+}

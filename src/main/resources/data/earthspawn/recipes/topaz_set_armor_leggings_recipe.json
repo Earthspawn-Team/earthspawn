@@ -1,0 +1,36 @@
+{
+  "group": "earthspawn",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "3 5",
+    "6 8"
+  ],
+  "key": {
+    "0": {
+      "item": "earthspawn:topaz"
+    },
+    "1": {
+      "item": "earthspawn:topaz"
+    },
+    "2": {
+      "item": "earthspawn:topaz"
+    },
+    "3": {
+      "item": "earthspawn:topaz"
+    },
+    "5": {
+      "item": "earthspawn:topaz"
+    },
+    "6": {
+      "item": "earthspawn:topaz"
+    },
+    "8": {
+      "item": "earthspawn:topaz"
+    }
+  },
+  "result": {
+    "item": "earthspawn:topaz_leggings",
+    "count": 1
+  }
+}
