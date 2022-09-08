@@ -25,3 +25,9 @@ mandatory = true
 versionRange = "[1.18.2,1.19)"
 ordering = "NONE"
 side = "BOTH"
+[[dependencies.earthspawn]]
+modId = "geckolib3"
+mandatory = true
+versionRange = "[3.0.37]"
+ordering = "NONE"
+side = "BOTH"
