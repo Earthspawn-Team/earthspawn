@@ -4,7 +4,8 @@ import com.mojang.logging.LogUtils;
 import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.items.ItemRegister;
-import net.earthspawn.mod.setup.ClientEventBusSubscriber;
+import net.earthspawn.mod.init.ClientEventBusSubscriber;
+import net.earthspawn.mod.world.features.FeatureRegister;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -29,6 +30,7 @@ public class Earthspawn {
 
         GeckoLib.initialize();
         BlockRegister.registerSetup(bus);
+        FeatureRegister.registerSetup(bus);
         EntitiesRegister.registerSetup(bus);
         ItemRegister.registerSetup(bus);
         MinecraftForge.EVENT_BUS.register(this);
