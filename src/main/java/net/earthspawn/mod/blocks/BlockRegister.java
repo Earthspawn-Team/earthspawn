@@ -34,7 +34,7 @@ public class BlockRegister {
 
     public static final RegistryObject<Block> HALLOW_GRASS = BLOCKS.register("hallow_grass", () -> BlockProperties.getBlockProperties(Blocks.GRASS_BLOCK));
     public static final RegistryObject<Block> HALLOW_DIRT = BLOCKS.register("hallow_dirt", () -> BlockProperties.getBlockProperties(Blocks.DIRT));
-    public static final RegistryObject<Block> TOPAZ_ORE = BLOCKS.register("topaz_ore", () -> BlockProperties.getBlockProperties(Blocks.DIAMOND_ORE));
+    public static final RegistryObject<Block> TOPAZ_ORE = BLOCKS.register("topaz_ore", () -> BlockProperties.getBlockProperties(Blocks.DEEPSLATE_DIAMOND_ORE));
     public static final RegistryObject<Block> GLADIOLUS = BLOCKS.register("gladiolus", () -> BlockProperties.setFlowerBlockProperties(Blocks.RED_TULIP, MaterialColor.COLOR_CYAN, 8, true));
     public static final RegistryObject<Block> HALLOW_ROOTS = BLOCKS.register("hallow_roots", () -> BlockProperties.setFlowerBlockProperties(Blocks.WARPED_ROOTS, MaterialColor.COLOR_CYAN, 4, false));
     public static final RegistryObject<Block> AMARYLLIS = BLOCKS.register("amaryllis", () -> BlockProperties.setFlowerBlockProperties(Blocks.PINK_TULIP, MaterialColor.COLOR_PINK, 0, false));
