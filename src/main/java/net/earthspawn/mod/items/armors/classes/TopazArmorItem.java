@@ -1,10 +1,13 @@
 package net.earthspawn.mod.items.armors.classes;
 
+import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.items.ItemRegister;
+import net.earthspawn.mod.tabs.EarthspawnTab;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.decoration.ArmorStand;
 import net.minecraft.world.item.ArmorMaterial;
+import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import software.bernie.example.GeckoLibMod;
@@ -26,7 +29,7 @@ public class TopazArmorItem extends GeoArmorItem implements IAnimatable {
     private AnimationFactory factory = new AnimationFactory(this);
 
     public TopazArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder) {
-        super(materialIn, slot, builder.tab(GeckoLibMod.geckolibItemGroup));
+        super(materialIn, slot, builder.tab(EarthspawnTab.CREATIVE_TAB));
     }
 
     // Predicate runs every frame
