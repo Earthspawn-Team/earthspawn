@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "/",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "item": "earthspawn:topaz"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "earthspawn:topaz_shovel",
+    "count": 1
+  },
+  "group": "earthspawn"
+}

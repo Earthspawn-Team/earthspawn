@@ -33,6 +33,10 @@ public class ItemRegister {
             () -> new SwordItem(ItemTiers.TOPAZ, 3, -2.4F, EarthspawnTab.itemTabProperties()));
     public static final RegistryObject<Item> TOPAZ_PICKAXE = ITEMS.register("topaz_pickaxe",
             () -> new PickaxeItem(ItemTiers.TOPAZ, 1, -2.8F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> TOPAZ_AXE = ITEMS.register("topaz_axe",
+            () -> new AxeItem(ItemTiers.TOPAZ, 5.0F, -3.0F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> TOPAZ_SHOVEL = ITEMS.register("topaz_shovel",
+            () -> new ShovelItem(ItemTiers.TOPAZ, 1.5F, -3.0F, EarthspawnTab.itemTabProperties()));
     public static final RegistryObject<Item> TOPAZ_HELMET = ITEMS.register("topaz_helmet",
             () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.HEAD, EarthspawnTab.itemTabProperties()));
     public static final RegistryObject<Item> TOPAZ_CHESTPLATE = ITEMS.register("topaz_chestplate",

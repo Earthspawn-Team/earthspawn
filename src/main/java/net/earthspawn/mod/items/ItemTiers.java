@@ -9,8 +9,8 @@ public class ItemTiers {
             3,
             1873,
             8.5F,
-            3.5F,
-            8,
+            4F,
+            10,
             null,
             () -> Ingredient.of(ItemRegister.TOPAZ.get()));
 }

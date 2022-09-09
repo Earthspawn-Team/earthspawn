@@ -10,8 +10,8 @@ public class ArmorTiers {
             "topaz",
             624,
             new int[] {4, 9, 7, 4},
-            6,
-            SoundEvents.ARMOR_EQUIP_DIAMOND,
+            10,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
             0.0f,
             0.0f,
             () -> Ingredient.of(ItemRegister.TOPAZ.get()));
