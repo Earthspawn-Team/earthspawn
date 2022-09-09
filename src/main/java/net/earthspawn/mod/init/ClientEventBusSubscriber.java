@@ -1,4 +1,4 @@
-package net.earthspawn.mod.setup;
+package net.earthspawn.mod.init;
 
 import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.blocks.BlockRegister;
