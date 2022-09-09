@@ -2,6 +2,7 @@ package net.earthspawn.mod.items;
 
 import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.items.armors.ArmorTiers;
+import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
 import net.earthspawn.mod.tabs.EarthspawnTab;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -10,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import software.bernie.example.item.PotatoArmorItem;
 
 @Mod.EventBusSubscriber(modid = Earthspawn.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ItemRegister {
@@ -37,12 +39,16 @@ public class ItemRegister {
             () -> new AxeItem(ItemTiers.TOPAZ, 5.0F, -3.0F, EarthspawnTab.itemTabProperties()));
     public static final RegistryObject<Item> TOPAZ_SHOVEL = ITEMS.register("topaz_shovel",
             () -> new ShovelItem(ItemTiers.TOPAZ, 1.5F, -3.0F, EarthspawnTab.itemTabProperties()));
-    public static final RegistryObject<Item> TOPAZ_HELMET = ITEMS.register("topaz_helmet",
-            () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.HEAD, EarthspawnTab.itemTabProperties()));
-    public static final RegistryObject<Item> TOPAZ_CHESTPLATE = ITEMS.register("topaz_chestplate",
-            () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.CHEST, EarthspawnTab.itemTabProperties()));
-    public static final RegistryObject<Item> TOPAZ_LEGGINGS = ITEMS.register("topaz_leggings",
-            () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.LEGS, EarthspawnTab.itemTabProperties()));
-    public static final RegistryObject<Item> TOPAZ_BOOTS = ITEMS.register("topaz_boots",
-            () -> new ArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.FEET, EarthspawnTab.itemTabProperties()));
+
+    public static final RegistryObject<TopazArmorItem> TOPAZ_HELMET = ITEMS.register("topaz_helmet",
+            () -> new TopazArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.HEAD, new Item.Properties()));
+
+    public static final RegistryObject<TopazArmorItem> TOPAZ_CHESTPLATE = ITEMS.register("topaz_chestplate",
+            () -> new TopazArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.CHEST, new Item.Properties()));
+
+    public static final RegistryObject<TopazArmorItem> TOPAZ_LEGGINGS = ITEMS.register("topaz_leggings",
+            () -> new TopazArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.LEGS, new Item.Properties()));
+
+    public static final RegistryObject<TopazArmorItem> TOPAZ_BOOTS = ITEMS.register("topaz_boots",
+            () -> new TopazArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.FEET, new Item.Properties()));
 }
