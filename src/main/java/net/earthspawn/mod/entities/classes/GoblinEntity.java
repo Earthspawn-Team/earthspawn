@@ -47,7 +47,6 @@ public class GoblinEntity extends Monster implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.)
         if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.walk", true));
             event.getController().setAnimationSpeed(event.getLimbSwingAmount() * 6f);
