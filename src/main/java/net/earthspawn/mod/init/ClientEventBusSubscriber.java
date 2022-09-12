@@ -3,7 +3,9 @@ package net.earthspawn.mod.init;
 import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.entities.EntitiesRegister;
+import net.earthspawn.mod.entities.classes.AcphinesEntity;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
+import net.earthspawn.mod.entities.renderers.AcphinesRenderer;
 import net.earthspawn.mod.entities.renderers.OuliskRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -20,6 +22,7 @@ public class ClientEventBusSubscriber {
     public static void clientRegisterSetup(FMLClientSetupEvent event) {
         //entity render setup
         EntityRenderers.register(EntitiesRegister.OULISK.get(), OuliskRenderer::new);
+        EntityRenderers.register(EntitiesRegister.ACPHINES.get(), AcphinesRenderer::new);
 
         //transparent block render setup
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.GLADIOLUS.get(), RenderType.cutout());
@@ -30,5 +33,6 @@ public class ClientEventBusSubscriber {
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(EntitiesRegister.OULISK.get(), OuliskEntity.setAttributes());
+        event.put(EntitiesRegister.ACPHINES.get(), AcphinesEntity.setAttributes());
     }
 }
