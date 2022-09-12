@@ -2,6 +2,7 @@ package net.earthspawn.mod.entities;
 
 import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.entities.classes.AcphinesEntity;
+import net.earthspawn.mod.entities.classes.GoblinEntity;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
@@ -23,6 +24,11 @@ public class EntitiesRegister {
             () -> EntityType.Builder.of(AcphinesEntity::new, MobCategory.WATER_AMBIENT)
                     .sized(0.5f, 0.5f)
                     .build(new ResourceLocation(Earthspawn.MOD_ID, "acphines").toString()));
+
+    public static final RegistryObject<EntityType<GoblinEntity>> GOBLIN = ENTITY_TYPES.register("goblin",
+            () -> EntityType.Builder.of(GoblinEntity::new, MobCategory.MONSTER)
+                    .sized(0.7f, 1.4f)
+                    .build(new ResourceLocation(Earthspawn.MOD_ID, "goblin").toString()));
 
     public static void registerSetup(IEventBus bus) {
         ENTITY_TYPES.register(bus);

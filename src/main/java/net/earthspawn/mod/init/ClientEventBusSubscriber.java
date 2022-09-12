@@ -4,8 +4,10 @@ import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.entities.classes.AcphinesEntity;
+import net.earthspawn.mod.entities.classes.GoblinEntity;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
 import net.earthspawn.mod.entities.renderers.AcphinesRenderer;
+import net.earthspawn.mod.entities.renderers.GoblinRenderer;
 import net.earthspawn.mod.entities.renderers.OuliskRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -23,6 +25,7 @@ public class ClientEventBusSubscriber {
         //entity render setup
         EntityRenderers.register(EntitiesRegister.OULISK.get(), OuliskRenderer::new);
         EntityRenderers.register(EntitiesRegister.ACPHINES.get(), AcphinesRenderer::new);
+        EntityRenderers.register(EntitiesRegister.GOBLIN.get(), GoblinRenderer::new);
 
         //transparent block render setup
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.GLADIOLUS.get(), RenderType.cutout());
@@ -34,5 +37,6 @@ public class ClientEventBusSubscriber {
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
         event.put(EntitiesRegister.OULISK.get(), OuliskEntity.setAttributes());
         event.put(EntitiesRegister.ACPHINES.get(), AcphinesEntity.setAttributes());
+        event.put(EntitiesRegister.GOBLIN.get(), GoblinEntity.setAttributes());
     }
 }
