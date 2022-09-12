@@ -1,11 +1,13 @@
 package net.earthspawn.mod.items;
 
 import net.earthspawn.mod.Earthspawn;
+import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.items.armors.ArmorTiers;
 import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
 import net.earthspawn.mod.tabs.EarthspawnTab;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
@@ -51,4 +53,9 @@ public class ItemRegister {
 
     public static final RegistryObject<TopazArmorItem> TOPAZ_BOOTS = ITEMS.register("topaz_boots",
             () -> new TopazArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.FEET, new Item.Properties()));
+
+    //spawn eggs
+    public static final RegistryObject<Item> OULISK_SPAWN_EGG = ITEMS.register("oulisk_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntitiesRegister.OULISK, 0x8f0099, 0x00fffb,
+                    new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
 }
