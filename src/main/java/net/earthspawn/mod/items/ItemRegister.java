@@ -58,4 +58,10 @@ public class ItemRegister {
     public static final RegistryObject<Item> OULISK_SPAWN_EGG = ITEMS.register("oulisk_spawn_egg",
             () -> new ForgeSpawnEggItem(EntitiesRegister.OULISK, 0x8f0099, 0x00fffb,
                     new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
+    public static final RegistryObject<Item> ACPHINES_SPAWN_EGG = ITEMS.register("acphines_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntitiesRegister.ACPHINES, 0x4d4d4d, 0x00fffb,
+                    new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
+    public static final RegistryObject<Item> GOBLIN_SPAWN_EGG = ITEMS.register("goblin_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntitiesRegister.GOBLIN, 0x355400, 0x543107,
+                    new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
 }
