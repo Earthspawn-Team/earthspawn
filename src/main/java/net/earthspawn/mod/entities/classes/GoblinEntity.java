@@ -28,6 +28,9 @@ import java.util.Objects;
 @Mod.EventBusSubscriber(modid = Earthspawn.MOD_ID)
 public class GoblinEntity extends Monster implements IAnimatable {
 
+    static int attack_tick = 0;
+    static boolean play_attack = false;
+
     private final AnimationFactory factory = new AnimationFactory(this);
 
     public GoblinEntity(EntityType<? extends Monster> entityType, Level level) {
@@ -64,7 +67,37 @@ public class GoblinEntity extends Monster implements IAnimatable {
         return PlayState.CONTINUE;
     }
 
+    private <E extends IAnimatable> PlayState predicate_attacks(AnimationEvent<E> event) {
+        System.out.print(attack_tick);
+        System.out.print("\n");
+        if (attack_tick > 0) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.attack", false));
+            event.getController().setAnimationSpeed(2.0f);
+            return  PlayState.CONTINUE;
+        }
+        event.getController().clearAnimationCache();
+        return PlayState.STOP;
+    }
+
+    @Override
+    public void tick() {
+        attack_tick -= 1;
+        if (attack_tick <= 0) {
+            play_attack = false;
+            attack_tick = 0;
+        }
+        super.tick();
+    }
+
+    @Override
     public boolean doHurtTarget(Entity target) {
+        System.out.print("hit");
+        System.out.print("\n");
+        if (!play_attack) {
+            attack_tick = 20;
+            play_attack = true;
+        }
+
         return super.doHurtTarget(target);
     }
 
@@ -72,6 +105,8 @@ public class GoblinEntity extends Monster implements IAnimatable {
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController(this, "controller",
                 0, this::predicate));
+        data.addAnimationController(new AnimationController(this, "controller_attack",
+                0, this::predicate_attacks));
     }
 
     @Override

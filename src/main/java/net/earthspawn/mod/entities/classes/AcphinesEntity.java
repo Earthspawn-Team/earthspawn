@@ -28,7 +28,7 @@ public class AcphinesEntity extends AbstractSchoolingFish implements IAnimatable
     public static AttributeSupplier setAttributes() {
         return WaterAnimal.createMobAttributes()
                 .add(Attributes.MAX_HEALTH, 6.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.20f)
+                .add(Attributes.MOVEMENT_SPEED, 1.0f)
                 .build();
     }
 

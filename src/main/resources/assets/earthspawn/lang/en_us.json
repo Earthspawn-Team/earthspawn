@@ -22,6 +22,10 @@
   "item.earthspawn.acphines_spawn_egg": "Acphines Spawn Egg",
   "item.earthspawn.goblin_spawn_egg": "Goblin Spawn Egg",
 
+  "entity.earthspawn.goblin": "Goblin",
+  "entity.earthspawn.oulisk": "Oulisk",
+  "entity.earthspawn.acphines": "Acphines",
+
   "item.earthspawn.crystal": "Crystal",
   "item.earthspawn.crystal_shard": "Crystal Shard",
   "item.earthspawn.astral_dust": "Astral Dust",
