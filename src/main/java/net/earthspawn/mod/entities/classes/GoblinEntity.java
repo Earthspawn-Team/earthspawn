@@ -15,6 +15,7 @@ import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -27,9 +28,6 @@ import java.util.Objects;
 
 @Mod.EventBusSubscriber(modid = Earthspawn.MOD_ID)
 public class GoblinEntity extends Monster implements IAnimatable {
-
-    static int attack_tick = 0;
-    static boolean play_attack = false;
 
     private final AnimationFactory factory = new AnimationFactory(this);
 
@@ -58,6 +56,11 @@ public class GoblinEntity extends Monster implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (this.isDeadOrDying()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.death", false));
+            event.getController().setAnimationSpeed(1.5f);
+            return  PlayState.CONTINUE;
+        }
         if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.walk", true));
             event.getController().setAnimationSpeed(event.getLimbSwingAmount() * 6f);
@@ -68,33 +71,13 @@ public class GoblinEntity extends Monster implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate_attacks(AnimationEvent<E> event) {
-        if (attack_tick > 0) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped) && !this.isDeadOrDying()) {
+            event.getController().markNeedsReload();
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.attack", false));
-            event.getController().setAnimationSpeed(2.0f);
-            return  PlayState.CONTINUE;
+            event.getController().setAnimationSpeed(1.5f);
+            this.swinging = false;
         }
-        event.getController().clearAnimationCache();
-        return PlayState.STOP;
-    }
-
-    @Override
-    public void tick() {
-        attack_tick -= 1;
-        if (attack_tick <= 0) {
-            play_attack = false;
-            attack_tick = 0;
-        }
-        super.tick();
-    }
-
-    @Override
-    public boolean doHurtTarget(Entity target) {
-        if (!play_attack) {
-            attack_tick = 20;
-            play_attack = true;
-        }
-
-        return super.doHurtTarget(target);
+        return PlayState.CONTINUE;
     }
 
     @Override

@@ -45,11 +45,6 @@ public class OuliskRenderer extends GeoEntityRenderer<OuliskEntity> {
         return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }
 
-    @Override
-    protected float getDeathMaxRotation(OuliskEntity entityLivingBaseIn) {
-        return 0;
-    }
-
     public static class OuliskGlowLayer<T extends OuliskEntity> extends GeoLayerRenderer<T> {
 
         private final ResourceLocation OULISK_GLOW;
