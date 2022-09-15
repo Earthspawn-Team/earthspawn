@@ -68,8 +68,6 @@ public class GoblinEntity extends Monster implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate_attacks(AnimationEvent<E> event) {
-        System.out.print(attack_tick);
-        System.out.print("\n");
         if (attack_tick > 0) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.attack", false));
             event.getController().setAnimationSpeed(2.0f);
@@ -91,8 +89,6 @@ public class GoblinEntity extends Monster implements IAnimatable {
 
     @Override
     public boolean doHurtTarget(Entity target) {
-        System.out.print("hit");
-        System.out.print("\n");
         if (!play_attack) {
             attack_tick = 20;
             play_attack = true;

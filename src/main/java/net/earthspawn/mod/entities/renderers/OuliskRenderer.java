@@ -16,6 +16,8 @@ import software.bernie.geckolib3.renderers.geo.IGeoRenderer;
 
 public class OuliskRenderer extends GeoEntityRenderer<OuliskEntity> {
 
+    private float rotationAngle;
+
     public OuliskRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new OuliskModel());
         this.addLayer(new OuliskGlowLayer<>(this));
@@ -41,6 +43,11 @@ public class OuliskRenderer extends GeoEntityRenderer<OuliskEntity> {
             stack.scale(1.0f, 1.0f, 1.0f);
         }
         return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
+    }
+
+    @Override
+    protected float getDeathMaxRotation(OuliskEntity entityLivingBaseIn) {
+        return 0;
     }
 
     public static class OuliskGlowLayer<T extends OuliskEntity> extends GeoLayerRenderer<T> {

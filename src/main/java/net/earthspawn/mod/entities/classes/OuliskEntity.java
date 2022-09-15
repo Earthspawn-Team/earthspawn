@@ -1,5 +1,6 @@
 package net.earthspawn.mod.entities.classes;
 
+import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.entities.EntitiesRegister;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
@@ -25,7 +26,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class OuliskEntity extends Animal implements IAnimatable {
     private final AnimationFactory factory = new AnimationFactory(this);
-    private static final Ingredient FOOD_ITEMS = Ingredient.of(Items.CARROT, Items.POTATO, Items.BEETROOT);
+    private static final Ingredient FOOD_ITEMS = Ingredient.of(BlockRegister.HALLOW_ROOTS.get().asItem());
 
     public OuliskEntity(EntityType<? extends Animal> entityType, Level level) {
         super(entityType, level);
