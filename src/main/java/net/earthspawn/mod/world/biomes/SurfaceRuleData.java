@@ -7,9 +7,9 @@ import net.minecraft.world.level.levelgen.SurfaceRules;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 
 public class SurfaceRuleData {
-    private static final SurfaceRules.RuleSource HALLOW_GRASS = makeStateRule(BlockRegister.HALLOW_GRASS.get());
+    /*private static final SurfaceRules.RuleSource HALLOW_GRASS = makeStateRule(BlockRegister.HALLOW_GRASS.get());
     private static final SurfaceRules.RuleSource HALLOW_DIRT = makeStateRule(BlockRegister.HALLOW_DIRT.get());
-    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
+    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);*/
 
     public static SurfaceRules.RuleSource makeRules()
     {
