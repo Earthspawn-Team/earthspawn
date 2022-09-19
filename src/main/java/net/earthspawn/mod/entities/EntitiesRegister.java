@@ -22,7 +22,7 @@ public class EntitiesRegister {
 
     public static final RegistryObject<EntityType<AcphinesEntity>> ACPHINES = ENTITY_TYPES.register("acphines",
             () -> EntityType.Builder.of(AcphinesEntity::new, MobCategory.WATER_AMBIENT)
-                    .sized(0.5f, 0.5f)
+                    .sized(0.8f, 0.8f)
                     .build(new ResourceLocation(Earthspawn.MOD_ID, "acphines").toString()));
 
     public static final RegistryObject<EntityType<GoblinEntity>> GOBLIN = ENTITY_TYPES.register("goblin",

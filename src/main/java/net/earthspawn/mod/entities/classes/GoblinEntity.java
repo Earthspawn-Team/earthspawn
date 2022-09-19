@@ -15,6 +15,7 @@ import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.jetbrains.annotations.NotNull;
+import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
 import software.bernie.geckolib3.core.builder.AnimationBuilder;
@@ -55,6 +56,11 @@ public class GoblinEntity extends Monster implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (this.isDeadOrDying()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.death", false));
+            event.getController().setAnimationSpeed(1.5f);
+            return  PlayState.CONTINUE;
+        }
         if (event.isMoving()) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.walk", true));
             event.getController().setAnimationSpeed(event.getLimbSwingAmount() * 6f);
@@ -64,14 +70,24 @@ public class GoblinEntity extends Monster implements IAnimatable {
         return PlayState.CONTINUE;
     }
 
-    public boolean doHurtTarget(Entity target) {
-        return super.doHurtTarget(target);
+    private <E extends IAnimatable> PlayState predicate_attacks(AnimationEvent<E> event) {
+        if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped) && !this.isDeadOrDying()) {
+            event.getController().markNeedsReload();
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.goblin.attack", false));
+            event.getController().setAnimationSpeed(1.5f);
+            this.swinging = false;
+        }
+        return PlayState.CONTINUE;
     }
+
+
 
     @Override
     public void registerControllers(AnimationData data) {
         data.addAnimationController(new AnimationController(this, "controller",
                 0, this::predicate));
+        data.addAnimationController(new AnimationController(this, "controller_attack",
+                0, this::predicate_attacks));
     }
 
     @Override

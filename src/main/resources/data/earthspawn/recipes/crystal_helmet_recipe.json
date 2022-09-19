@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#X#",
+    "# #"
+  ],
+  "key": {
+    "#": {
+      "item": "earthspawn:crystal"
+    },
+    "X": {
+      "item": "earthspawn:charged_crystal"
+    }
+  },
+  "result": {
+    "item": "earthspawn:crystal_helmet",
+    "count": 1
+  }
+}

@@ -15,4 +15,14 @@ public class ArmorTiers {
             0.0f,
             0.0f,
             () -> Ingredient.of(ItemRegister.TOPAZ.get()));
+
+    public static final ArmorMaterial CRYSTAL = new ArmorMaterialsRecord(
+            "crystal",
+            850,
+            new int[] {5, 9, 8, 5},
+            10,
+            SoundEvents.ARMOR_EQUIP_NETHERITE,
+            1.0f,
+            0.5f,
+            () -> Ingredient.of(ItemRegister.CRYSTAL.get()));
 }
