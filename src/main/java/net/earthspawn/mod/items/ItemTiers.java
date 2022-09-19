@@ -13,4 +13,13 @@ public class ItemTiers {
             10,
             null,
             () -> Ingredient.of(ItemRegister.TOPAZ.get()));
+
+    public static final Tier CRYSTAL = new ForgeTier(
+            3,
+            1873,
+            8.5F,
+            4F,
+            10,
+            null,
+            () -> Ingredient.of(ItemRegister.CRYSTAL.get()));
 }

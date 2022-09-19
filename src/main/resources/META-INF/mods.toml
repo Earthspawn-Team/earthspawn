@@ -31,3 +31,9 @@ mandatory = true
 versionRange = "[3.0.37]"
 ordering = "NONE"
 side = "BOTH"
+[[dependencies.earthspawn]]
+modId = "terrablender"
+mandatory = true
+versionRange = "[1.2.0.126]"
+ordering = "NONE"
+side = "BOTH"

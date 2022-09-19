@@ -3,6 +3,7 @@
 
   "block.earthspawn.hallow_grass": "Hallow Grass",
   "block.earthspawn.hallow_dirt": "Hallow Dirt",
+  "block.earthspawn.hallow_log": "Hallow Log",
   "block.earthspawn.gladiolus": "Gladiolus",
   "block.earthspawn.hallow_roots": "Hallow Roots",
   "block.earthspawn.amaryllis": "Amaryllis",
@@ -21,6 +22,10 @@
   "item.earthspawn.oulisk_spawn_egg": "Oulisk Spawn Egg",
   "item.earthspawn.acphines_spawn_egg": "Acphines Spawn Egg",
   "item.earthspawn.goblin_spawn_egg": "Goblin Spawn Egg",
+
+  "entity.earthspawn.goblin": "Goblin",
+  "entity.earthspawn.oulisk": "Oulisk",
+  "entity.earthspawn.acphines": "Acphines",
 
   "item.earthspawn.crystal": "Crystal",
   "item.earthspawn.crystal_shard": "Crystal Shard",

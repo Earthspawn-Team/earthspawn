@@ -4,14 +4,19 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.entities.classes.GoblinEntity;
+import net.earthspawn.mod.entities.classes.OuliskEntity;
 import net.earthspawn.mod.entities.models.GoblinModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
+import software.bernie.geckolib3.renderers.geo.layer.LayerGlowingAreasGeo;
 
-public class GoblinRenderer  extends GeoEntityRenderer<GoblinEntity> {
+import java.util.function.Function;
+
+public class GoblinRenderer extends GeoEntityRenderer<GoblinEntity>{
 
     public GoblinRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new GoblinModel());
@@ -19,8 +24,13 @@ public class GoblinRenderer  extends GeoEntityRenderer<GoblinEntity> {
     }
 
     @Override
-    public ResourceLocation getTextureLocation(GoblinEntity object) {
+    public @NotNull ResourceLocation getTextureLocation(@NotNull GoblinEntity object) {
         return new ResourceLocation(Earthspawn.MOD_ID, "textures/entities/goblin.png");
+    }
+
+    @Override
+    protected float getDeathMaxRotation(GoblinEntity entityLivingBaseIn) {
+        return 0;
     }
 
     @Override
