@@ -5,6 +5,7 @@ import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.items.ItemRegister;
 import net.earthspawn.mod.init.ClientEventBusSubscriber;
+import net.earthspawn.mod.world.biomes.BiomeRegister;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +32,7 @@ public class Earthspawn {
         BlockRegister.registerSetup(bus);
         EntitiesRegister.registerSetup(bus);
         ItemRegister.registerSetup(bus);
+        BiomeRegister.registerSetup(bus);
         MinecraftForge.EVENT_BUS.register(this);
     }
 }
