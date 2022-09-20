@@ -33,6 +33,8 @@ public class GoblinRenderer extends GeoEntityRenderer<GoblinEntity>{
         return 0;
     }
 
+
+
     @Override
     public RenderType getRenderType(GoblinEntity animatable, float partialTicks, PoseStack stack,
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,

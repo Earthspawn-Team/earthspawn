@@ -71,4 +71,7 @@ public class ItemRegister {
     public static final RegistryObject<Item> GOBLIN_SPAWN_EGG = ITEMS.register("goblin_spawn_egg",
             () -> new ForgeSpawnEggItem(EntitiesRegister.GOBLIN, 0x355400, 0x543107,
                     new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
+    public static final RegistryObject<Item> CRYSTAL_STALKER_SPAWN_EGG = ITEMS.register("crystal_stalker_spawn_egg",
+            () -> new ForgeSpawnEggItem(EntitiesRegister.CRYSTAL_STALKER, 0x4d8d8f, 0x00fffb,
+                    new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
 }

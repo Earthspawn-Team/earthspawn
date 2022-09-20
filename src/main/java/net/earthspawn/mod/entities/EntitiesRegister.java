@@ -2,6 +2,7 @@ package net.earthspawn.mod.entities;
 
 import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.entities.classes.AcphinesEntity;
+import net.earthspawn.mod.entities.classes.CrystalStalkerEntity;
 import net.earthspawn.mod.entities.classes.GoblinEntity;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
 import net.minecraft.resources.ResourceLocation;
@@ -29,6 +30,11 @@ public class EntitiesRegister {
             () -> EntityType.Builder.of(GoblinEntity::new, MobCategory.MONSTER)
                     .sized(0.7f, 1.4f)
                     .build(new ResourceLocation(Earthspawn.MOD_ID, "goblin").toString()));
+
+    public static final RegistryObject<EntityType<CrystalStalkerEntity>> CRYSTAL_STALKER = ENTITY_TYPES.register("crystal_stalker",
+            () -> EntityType.Builder.of(CrystalStalkerEntity::new, MobCategory.CREATURE)
+                    .sized(1.1f, 1.4f)
+                    .build(new ResourceLocation(Earthspawn.MOD_ID, "crystal_stalker").toString()));
 
     public static void registerSetup(IEventBus bus) {
         ENTITY_TYPES.register(bus);

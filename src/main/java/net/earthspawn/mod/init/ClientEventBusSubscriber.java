@@ -7,6 +7,7 @@ import net.earthspawn.mod.entities.classes.AcphinesEntity;
 import net.earthspawn.mod.entities.classes.GoblinEntity;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
 import net.earthspawn.mod.entities.renderers.AcphinesRenderer;
+import net.earthspawn.mod.entities.renderers.CrystalStalkerRenderer;
 import net.earthspawn.mod.entities.renderers.GoblinRenderer;
 import net.earthspawn.mod.entities.renderers.OuliskRenderer;
 import net.earthspawn.mod.items.ItemRegister;
@@ -44,6 +45,7 @@ public class ClientEventBusSubscriber {
         EntityRenderers.register(EntitiesRegister.OULISK.get(), OuliskRenderer::new);
         EntityRenderers.register(EntitiesRegister.ACPHINES.get(), AcphinesRenderer::new);
         EntityRenderers.register(EntitiesRegister.GOBLIN.get(), GoblinRenderer::new);
+        EntityRenderers.register(EntitiesRegister.CRYSTAL_STALKER.get(), CrystalStalkerRenderer::new);
 
         //transparent block render setup
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.GLADIOLUS.get(), RenderType.cutout());
@@ -64,11 +66,12 @@ public class ClientEventBusSubscriber {
         event.put(EntitiesRegister.OULISK.get(), OuliskEntity.setAttributes());
         event.put(EntitiesRegister.ACPHINES.get(), AcphinesEntity.setAttributes());
         event.put(EntitiesRegister.GOBLIN.get(), GoblinEntity.setAttributes());
+        event.put(EntitiesRegister.CRYSTAL_STALKER.get(), GoblinEntity.setAttributes());
     }
 
     @SubscribeEvent
     public static void registerArmorRenderer(final EntityRenderersEvent.AddLayers event) {
-        GeoArmorRenderer.registerArmorRenderer(TopazArmorItem.class, new TopazArmorRenderer());
-        GeoArmorRenderer.registerArmorRenderer(CrystalArmorItem.class, new CrystalArmorRenderer());
+        GeoArmorRenderer.registerArmorRenderer(TopazArmorItem.class, TopazArmorRenderer::new);
+        GeoArmorRenderer.registerArmorRenderer(CrystalArmorItem.class, CrystalArmorRenderer::new);
     }
 }
