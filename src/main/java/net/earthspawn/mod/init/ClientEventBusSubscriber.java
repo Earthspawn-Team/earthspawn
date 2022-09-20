@@ -4,6 +4,7 @@ import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.entities.classes.AcphinesEntity;
+import net.earthspawn.mod.entities.classes.CrystalStalkerEntity;
 import net.earthspawn.mod.entities.classes.GoblinEntity;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
 import net.earthspawn.mod.entities.renderers.AcphinesRenderer;
@@ -66,7 +67,7 @@ public class ClientEventBusSubscriber {
         event.put(EntitiesRegister.OULISK.get(), OuliskEntity.setAttributes());
         event.put(EntitiesRegister.ACPHINES.get(), AcphinesEntity.setAttributes());
         event.put(EntitiesRegister.GOBLIN.get(), GoblinEntity.setAttributes());
-        event.put(EntitiesRegister.CRYSTAL_STALKER.get(), GoblinEntity.setAttributes());
+        event.put(EntitiesRegister.CRYSTAL_STALKER.get(), CrystalStalkerEntity.setAttributes());
     }
 
     @SubscribeEvent

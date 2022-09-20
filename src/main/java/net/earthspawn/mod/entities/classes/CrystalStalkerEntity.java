@@ -25,6 +25,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.geckolib3.core.AnimationState;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -38,7 +39,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import java.util.UUID;
 
 public class CrystalStalkerEntity extends Animal implements IAnimatable, NeutralMob {
-    private AnimationFactory factory = new AnimationFactory(this);
+    private final AnimationFactory factory = new AnimationFactory(this);
     private static final EntityDataAccessor<Integer> DATA_REMAINING_ANGER_TIME = SynchedEntityData.defineId(CrystalStalkerEntity.class, EntityDataSerializers.INT);
 
     private static final UniformInt PERSISTENT_ANGER_TIME = TimeUtil.rangeOfSeconds(20, 39);
@@ -117,7 +118,7 @@ public class CrystalStalkerEntity extends Animal implements IAnimatable, Neutral
         return null;
     }
 
-    protected SoundEvent getHurtSound(DamageSource source) {
+    protected SoundEvent getHurtSound(@NotNull DamageSource source) {
         return null;
     }
 
@@ -125,13 +126,13 @@ public class CrystalStalkerEntity extends Animal implements IAnimatable, Neutral
         return null;
     }
 
-    protected void playStepSound(BlockPos pos, BlockState blockstate) {
+    protected void playStepSound(@NotNull BlockPos pos, @NotNull BlockState blockstate) {
         this.playSound(SoundEvents.SHEEP_STEP, 0.15F, 1.0F);
     }
 
     @Nullable
     @Override
-    public AgeableMob getBreedOffspring(ServerLevel p_146743_, AgeableMob p_146744_) {
+    public AgeableMob getBreedOffspring(@NotNull ServerLevel p_146743_, @NotNull AgeableMob p_146744_) {
         return null;
     }
 
