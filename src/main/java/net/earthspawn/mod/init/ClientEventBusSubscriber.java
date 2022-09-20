@@ -49,11 +49,13 @@ public class ClientEventBusSubscriber {
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.GLADIOLUS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.HALLOW_ROOTS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.AMARYLLIS.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockRegister.HALLOW_LEAVES.get(), RenderType.cutout());
+        ItemBlockRenderTypes.setRenderLayer(BlockRegister.HALLOW_SAPLING.get(), RenderType.cutout());
 
         //biome region setup
         event.enqueueWork(() ->
         {
-            Regions.register(new RegionData(new ResourceLocation(Earthspawn.MOD_ID, "overworld"), RegionType.OVERWORLD, 5));
+            Regions.register(new RegionData(new ResourceLocation(Earthspawn.MOD_ID, "overworld"), RegionType.OVERWORLD, 8));
 
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, Earthspawn.MOD_ID, SurfaceRuleData.makeRules());
         });
