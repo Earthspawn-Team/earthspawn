@@ -54,8 +54,8 @@ public class CrystalStalkerEntity extends Animal implements IAnimatable, Neutral
 
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new FloatGoal(this));
-        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 2.0f, true));
-        this.goalSelector.addGoal(2, new LeapAtTargetGoal(this, 0.8f));
+        this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.8f, true));
+        this.goalSelector.addGoal(2, new LeapAtTargetGoal(this, 0.4f));
         this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, 6.0F));
         this.goalSelector.addGoal(8, new RandomLookAroundGoal(this));
         this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0D));
@@ -72,20 +72,20 @@ public class CrystalStalkerEntity extends Animal implements IAnimatable, Neutral
 
     public static AttributeSupplier setAttributes() {
         return Animal.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 15.0D)
+                .add(Attributes.MAX_HEALTH, 16.0D)
+                .add(Attributes.ARMOR, 0.20f)
                 .add(Attributes.ATTACK_DAMAGE, 3.0f)
                 .add(Attributes.ATTACK_SPEED, 1.0f)
-                .add(Attributes.MOVEMENT_SPEED, 0.25f)
+                .add(Attributes.MOVEMENT_SPEED, 0.20f)
                 .build();
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
+        if (event.getLimbSwing() != 0.0f) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.crystal_stalker.walk", true));
-            event.getController().setAnimationSpeed(event.getLimbSwingAmount() * 2.3f);
+            event.getController().setAnimationSpeed(event.getLimbSwingAmount() * 3.4f);
             return  PlayState.CONTINUE;
         }
-        event.getController().setAnimationSpeed(1.0f);
         event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.crystal_stalker.idle", true));
         return  PlayState.CONTINUE;
     }
@@ -93,7 +93,6 @@ public class CrystalStalkerEntity extends Animal implements IAnimatable, Neutral
     private <E extends IAnimatable> PlayState predicate_attack(AnimationEvent<E> event) {
         if (this.swinging && event.getController().getAnimationState().equals(AnimationState.Stopped)) {
             event.getController().markNeedsReload();
-            event.getController().setAnimationSpeed(1.0f);
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.crystal_stalker.attack", false));
             this.swinging = false;
         }

@@ -59,7 +59,7 @@ public class OuliskEntity extends Animal implements IAnimatable {
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.isMoving()) {
+        if (event.getLimbSwing() != 0.0f) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.oulisk.walk", true));
             event.getController().setAnimationSpeed(event.getLimbSwingAmount() * 3f);
             return  PlayState.CONTINUE;
