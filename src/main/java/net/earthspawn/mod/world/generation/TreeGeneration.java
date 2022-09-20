@@ -7,7 +7,6 @@ import net.minecraft.core.Holder;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
@@ -22,10 +21,5 @@ public class TreeGeneration {
 
             base.add(TreePlacedFeatures.HALLOW_TREE);
         }
-    }
-
-    @SubscribeEvent
-    static void biomeSetup(final BiomeLoadingEvent event) {
-        TreeGeneration.generateTrees(event);
     }
 }

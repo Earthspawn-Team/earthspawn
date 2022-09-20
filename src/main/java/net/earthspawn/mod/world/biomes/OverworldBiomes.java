@@ -1,14 +1,11 @@
 package net.earthspawn.mod.world.biomes;
 
-import net.earthspawn.mod.entities.EntitiesRegister;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 
 import javax.annotation.Nullable;
-import java.awt.*;
 
 public class OverworldBiomes {
 
@@ -39,7 +36,6 @@ public class OverworldBiomes {
     //biomes
     public static Biome hallowPlains() {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntitiesRegister.OULISK.get(), 5, 1, 3));
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
