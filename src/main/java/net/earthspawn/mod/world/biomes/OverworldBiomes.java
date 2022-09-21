@@ -34,7 +34,7 @@ public class OverworldBiomes {
     }
 
     //biomes
-    public static Biome hallowPlains() {
+    public static Biome hallowLands() {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 

@@ -9,5 +9,5 @@ public class TreePlacedFeatures {
 
     public static final Holder<PlacedFeature> HALLOW_TREE = PlacementUtils.register("hallow_tree_placed",
             TreeConfiguredFeatures.HALLOW_TREE_SPAWN, VegetationPlacements.treePlacement(
-                    PlacementUtils.countExtra(3, 0.1f, 2)));
+                    PlacementUtils.countExtra(1, 0.1f, 1)));
 }

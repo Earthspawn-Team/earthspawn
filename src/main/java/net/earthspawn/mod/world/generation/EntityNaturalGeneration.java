@@ -17,9 +17,9 @@ import java.util.List;
 public class EntityNaturalGeneration {
 
     public static void onEntitySpawn(final BiomeLoadingEvent event) {
-        addEntityToSpecificBiomes(event, EntitiesRegister.OULISK.get(), 15, 2, 5, BiomeRegister.HALLOW_PLAINS.getKey());
-        addEntityToSpecificBiomes(event, EntitiesRegister.ACPHINES.get(), 10, 4, 8, BiomeRegister.HALLOW_PLAINS.getKey());
-        addEntityToSpecificBiomes(event, EntitiesRegister.GOBLIN.get(), 10, 2, 6, BiomeRegister.HALLOW_PLAINS.getKey());
+        addEntityToSpecificBiomes(event, EntitiesRegister.OULISK.get(), 15, 2, 5, BiomeRegister.HALLOW_LANDS.getKey());
+        addEntityToSpecificBiomes(event, EntitiesRegister.ACPHINES.get(), 10, 4, 8, BiomeRegister.HALLOW_LANDS.getKey());
+        addEntityToSpecificBiomes(event, EntitiesRegister.GOBLIN.get(), 10, 2, 6, BiomeRegister.HALLOW_LANDS.getKey());
     }
 
     //generation method

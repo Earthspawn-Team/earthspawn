@@ -16,7 +16,7 @@ public class FlowerGeneration {
 
     public static void generateFlowers(final BiomeLoadingEvent event) {
 
-        if(event.getName().equals(BiomeRegister.HALLOW_PLAINS.get().getRegistryName())) {
+        if(event.getName().equals(BiomeRegister.HALLOW_LANDS.get().getRegistryName())) {
             List<Holder<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
             base.add(FlowerPlacedFeatures.GLADIOLUS);
