@@ -13,8 +13,11 @@ import net.earthspawn.mod.items.armors.classes.CrystalArmorItem;
 import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
 import net.earthspawn.mod.items.armors.renderers.CrystalArmorRenderer;
 import net.earthspawn.mod.items.armors.renderers.TopazArmorRenderer;
+import net.earthspawn.mod.particles.ParticleRegister;
+import net.earthspawn.mod.particles.classes.HallowAmbientBiomeParticles;
 import net.earthspawn.mod.world.biomes.RegionData;
 import net.earthspawn.mod.world.biomes.SurfaceRuleData;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -24,6 +27,7 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -75,5 +79,10 @@ public class ClientEventBusSubscriber {
     public static void registerArmorRenderer(final EntityRenderersEvent.AddLayers event) {
         GeoArmorRenderer.registerArmorRenderer(TopazArmorItem.class, new TopazArmorRenderer());
         GeoArmorRenderer.registerArmorRenderer(CrystalArmorItem.class, new CrystalArmorRenderer());
+    }
+
+    @SubscribeEvent
+    public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
+        Minecraft.getInstance().particleEngine.register(ParticleRegister.HALLOW_BIOME_AMBIENT_PARTICLES.get(), HallowAmbientBiomeParticles.Provider::new);
     }
 }
