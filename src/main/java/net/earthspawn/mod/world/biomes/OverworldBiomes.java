@@ -1,11 +1,10 @@
 package net.earthspawn.mod.world.biomes;
 
 import net.earthspawn.mod.particles.ParticleRegister;
-import net.minecraft.core.particles.ParticleOptions;
-import net.minecraft.core.particles.ParticleType;
+import net.earthspawn.mod.sounds.SoundRegister;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.sounds.Music;
+import net.minecraft.sounds.Musics;
 import net.minecraft.util.Mth;
 import net.minecraft.world.level.biome.*;
 
@@ -50,6 +49,6 @@ public class OverworldBiomes {
         BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
         BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
 
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 1F, 0.9F, 58853, 12198353, 58853, null, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 1F, 0.9F, 58853, 12198353, 58853, new AmbientParticleSettings(ParticleRegister.HALLOW_BIOME_AMBIENT_PARTICLES.get(), 0.00625F), spawnBuilder, biomeBuilder, Musics.createGameMusic(SoundRegister.HALLOW_BIOME_MUSIC.get()));
     }
 }

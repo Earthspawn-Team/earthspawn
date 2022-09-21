@@ -16,18 +16,15 @@ public class HallowAmbientBiomeParticles extends TextureSheetParticle {
         this.xd = xd;
         this.yd = yd;
         this.zd = zd;
-        this.quadSize *= 0.5F;
-        this.lifetime = 60;
+        this.quadSize *= 0.2F;
+        this.lifetime = 120;
+        this.gravity = -0.3F;
+        this.hasPhysics = false;
         this.setSpriteFromAge(spriteSet);
 
         this.rCol = 1f;
         this.gCol = 1f;
         this.bCol = 1f;
-    }
-
-    @Override
-    protected int getLightColor(float color) {
-        return 58853;
     }
 
     @Override
