@@ -63,8 +63,8 @@ public class ItemRegister {
             () -> new ShovelItem(ItemTiers.CRYSTAL, 1.5F, -3.0F, EarthspawnTab.itemTabProperties()));
     public static final RegistryObject<Item> CRYSTAL_HOE = ITEMS.register("crystal_hoe",
             () -> new HoeItem(ItemTiers.CRYSTAL, 3, -3.0F, EarthspawnTab.itemTabProperties()));
-    public static final RegistryObject<Item> CRYSTAL_BOW = ITEMS.register("crystal_bow",
-            () -> new BowItem(new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB).durability(2124)));
+    public static final RegistryObject<BowItem> CRYSTAL_BOW = ITEMS.register("crystal_bow",
+            () -> new CrystalBowItem(EarthspawnTab.itemTabProperties().durability(2124)));
     public static final RegistryObject<CrystalArmorItem> CRYSTAL_HELMET = ITEMS.register("crystal_helmet",
             () -> new CrystalArmorItem(ArmorTiers.CRYSTAL, EquipmentSlot.HEAD, new Item.Properties()));
     public static final RegistryObject<CrystalArmorItem> CRYSTAL_CHESTPLATE = ITEMS.register("crystal_chestplate",
