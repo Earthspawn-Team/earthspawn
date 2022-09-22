@@ -16,7 +16,7 @@ public class OreConfiguredFeatures {
             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES, BlockRegister.TOPAZ_ORE.get().defaultBlockState()));
 
     public static final Holder<ConfiguredFeature<OreConfiguration, ?>> TOPAZ_ORE_GENERATION = FeatureUtils.register("topaz_ore_configured",
-            Feature.ORE, new OreConfiguration(TOPAZ_OVERWORLD_REPLACEMENT, 8));
+            Feature.ORE, new OreConfiguration(TOPAZ_OVERWORLD_REPLACEMENT, 5));
 
 
 }
