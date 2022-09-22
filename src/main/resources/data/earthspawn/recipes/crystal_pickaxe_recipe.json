@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#O#",
+    " / ",
+    " o "
+  ],
+  "key": {
+    "#": {
+      "item": "earthspawn:crystal"
+    },
+    "O": {
+      "item": "earthspawn:charged_crystal"
+    },
+    "o": {
+      "item": "earthspawn:crystal_shard"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "earthspawn:crystal_pickaxe",
+    "count": 1
+  }
+}
