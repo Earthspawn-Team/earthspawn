@@ -49,6 +49,6 @@ public class OverworldBiomes {
         BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
         BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
 
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 1F, 0.9F, 58853, 12198353, 58853, new AmbientParticleSettings(ParticleRegister.HALLOW_BIOME_AMBIENT_PARTICLES.get(), 0.00625F), spawnBuilder, biomeBuilder, Musics.createGameMusic(SoundRegister.HALLOW_BIOME_MUSIC.get()));
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 1F, 0.9F, 58853, 12198353, 58853, new AmbientParticleSettings(ParticleRegister.HALLOW_BIOME_AMBIENT_PARTICLES.get(), 0.004F), spawnBuilder, biomeBuilder, Musics.createGameMusic(SoundRegister.HALLOW_BIOME_MUSIC.get()));
     }
 }

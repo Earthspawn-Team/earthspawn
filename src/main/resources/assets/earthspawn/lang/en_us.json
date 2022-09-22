@@ -1,6 +1,8 @@
 {
   "itemGroup.earthspawn":  "Earthspawn",
 
+  "biome.earthspawn.hallow_lands":  "Hallow Lands",
+
   "block.earthspawn.hallow_grass": "Hallow Grass",
   "block.earthspawn.hallow_dirt": "Hallow Dirt",
   "block.earthspawn.hallow_log": "Hallow Log",

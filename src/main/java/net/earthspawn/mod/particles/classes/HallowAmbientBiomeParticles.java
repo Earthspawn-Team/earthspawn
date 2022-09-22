@@ -16,7 +16,7 @@ public class HallowAmbientBiomeParticles extends TextureSheetParticle {
         this.xd = xd;
         this.yd = yd;
         this.zd = zd;
-        this.quadSize *= 0.2F;
+        this.quadSize *= 0.1F;
         this.lifetime = 120;
         this.gravity = -0.3F;
         this.hasPhysics = false;
@@ -29,7 +29,14 @@ public class HallowAmbientBiomeParticles extends TextureSheetParticle {
 
     @Override
     public @NotNull ParticleRenderType getRenderType() {
-        return ParticleRenderType.PARTICLE_SHEET_LIT;
+        return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+    }
+
+    @Override
+    public int getLightColor(float p_107086_) {
+        int i = super.getLightColor(p_107086_);
+        int k = i >> 16 & 255;
+        return 240 | k << 16;
     }
 
     @OnlyIn(Dist.CLIENT)
