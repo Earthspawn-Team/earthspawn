@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "earthspawn:item/crystal_bow"
+    "layer0": "earthspawn:items/crystal_bow"
   },
   "display": {
     "thirdperson_righthand": {

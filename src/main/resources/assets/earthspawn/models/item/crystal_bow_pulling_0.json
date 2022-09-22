@@ -1,6 +1,6 @@
 {
     "parent": "earthspawn:item/crystal_bow",
     "textures": {
-        "layer0": "earthspawn:item/crystal_bow_pulling_0"
+        "layer0": "earthspawn:items/crystal_bow_pulling_0"
     }
 }
