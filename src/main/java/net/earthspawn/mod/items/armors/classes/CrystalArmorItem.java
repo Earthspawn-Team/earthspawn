@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CrystalArmorItem extends GeoArmorItem implements IAnimatable {
-    private AnimationFactory factory = new AnimationFactory(this);
+    private final AnimationFactory factory = new AnimationFactory(this);
 
     public CrystalArmorItem(ArmorMaterial materialIn, EquipmentSlot slot, Properties builder) {
         super(materialIn, slot, builder.tab(EarthspawnTab.CREATIVE_TAB));

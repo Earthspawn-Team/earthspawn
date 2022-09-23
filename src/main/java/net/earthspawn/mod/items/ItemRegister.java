@@ -6,6 +6,7 @@ import net.earthspawn.mod.items.armors.ArmorTiers;
 import net.earthspawn.mod.items.armors.classes.CrystalArmorItem;
 import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
 import net.earthspawn.mod.items.ranged.CrystalBowItem;
+import net.earthspawn.mod.items.shields.CrystalShieldItem;
 import net.earthspawn.mod.tabs.EarthspawnTab;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -52,6 +53,9 @@ public class ItemRegister {
             () -> new TopazArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.FEET, new Item.Properties()));
 
     //crystal tier
+
+    public static final RegistryObject<CrystalShieldItem> CRYSTAL_SHIELD = ITEMS.register("crystal_shield",
+            () -> new CrystalShieldItem(EarthspawnTab.itemTabProperties().durability(2124)));
 
     public static final RegistryObject<Item> CRYSTAL_SWORD = ITEMS.register("crystal_sword",
             () -> new SwordItem(ItemTiers.CRYSTAL, 3, -2.4F, EarthspawnTab.itemTabProperties()));

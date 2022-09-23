@@ -11,11 +11,13 @@ import net.earthspawn.mod.entities.renderers.AcphinesRenderer;
 import net.earthspawn.mod.entities.renderers.CrystalStalkerRenderer;
 import net.earthspawn.mod.entities.renderers.GoblinRenderer;
 import net.earthspawn.mod.entities.renderers.OuliskRenderer;
+import net.earthspawn.mod.items.ItemRegister;
 import net.earthspawn.mod.items.ModItemProperties;
 import net.earthspawn.mod.items.armors.classes.CrystalArmorItem;
 import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
 import net.earthspawn.mod.items.armors.renderers.CrystalArmorRenderer;
 import net.earthspawn.mod.items.armors.renderers.TopazArmorRenderer;
+import net.earthspawn.mod.items.shields.CrystalShieldRenderer;
 import net.earthspawn.mod.world.biomes.RegionData;
 import net.earthspawn.mod.world.biomes.SurfaceRuleData;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -27,7 +29,9 @@ import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import software.bernie.example.registry.ItemRegistry;
 import software.bernie.geckolib3.renderers.geo.GeoArmorRenderer;
+import software.bernie.geckolib3.renderers.geo.GeoItemRenderer;
 import terrablender.api.RegionType;
 import terrablender.api.Regions;
 import terrablender.api.SurfaceRuleManager;
@@ -47,7 +51,6 @@ public class ClientEventBusSubscriber {
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.GLADIOLUS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.HALLOW_ROOTS.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.AMARYLLIS.get(), RenderType.cutout());
-
 
         //mod item properties setup (for custom bow)
         ModItemProperties.addCustomItemProperties();

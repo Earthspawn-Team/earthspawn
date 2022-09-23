@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#W#",
+    "FOF",
+    "#W#"
+  ],
+  "key": {
+    "F": {
+      "item": "minecraft:iron_block"
+    },
+    "#": {
+      "item": "earthspawn:crystal"
+    },
+    "W": {
+      "tag": "minecraft:planks"
+    },
+    "O": {
+      "item": "earthspawn:charged_crystal"
+    }
+  },
+  "result": {
+    "item": "earthspawn:crystal_shield",
+    "count": 1
+  }
+}
