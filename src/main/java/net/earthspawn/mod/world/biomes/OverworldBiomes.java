@@ -1,14 +1,14 @@
 package net.earthspawn.mod.world.biomes;
 
-import net.earthspawn.mod.entities.EntitiesRegister;
+import net.earthspawn.mod.particles.ParticleRegister;
+import net.earthspawn.mod.sounds.SoundRegister;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.sounds.Music;
+import net.minecraft.sounds.Musics;
 import net.minecraft.util.Mth;
-import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 
 import javax.annotation.Nullable;
-import java.awt.*;
 
 public class OverworldBiomes {
 
@@ -22,9 +22,9 @@ public class OverworldBiomes {
         return Mth.hsvToRgb(0.62222224F - $$1 * 0.05F, 0.5F + $$1 * 0.1F, 1.0F);
     }
 
-    private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory biomeCategory, float temperature, float downfall, int grassColor, int waterColor, int fogColor, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
+    private static Biome biome(Biome.Precipitation precipitation, Biome.BiomeCategory biomeCategory, float temperature, float downfall, int grassColor, int waterColor, int fogColor, AmbientParticleSettings ambientParticleSettings, MobSpawnSettings.Builder spawnBuilder, BiomeGenerationSettings.Builder biomeBuilder, @Nullable Music music)
     {
-        return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(biomeCategory).temperature(temperature).downfall(downfall).specialEffects((new BiomeSpecialEffects.Builder()).grassColorOverride(grassColor).waterColor(waterColor).waterFogColor(waterColor).fogColor(fogColor).skyColor(calculateSkyColor(temperature)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
+        return (new Biome.BiomeBuilder()).precipitation(precipitation).biomeCategory(biomeCategory).temperature(temperature).downfall(downfall).specialEffects((new BiomeSpecialEffects.Builder()).grassColorOverride(grassColor).waterColor(waterColor).waterFogColor(waterColor).fogColor(fogColor).ambientParticle(ambientParticleSettings).skyColor(calculateSkyColor(fogColor)).ambientMoodSound(AmbientMoodSettings.LEGACY_CAVE_SETTINGS).backgroundMusic(music).build()).mobSpawnSettings(spawnBuilder.build()).generationSettings(biomeBuilder.build()).build();
     }
 
     private static void globalOverworldGeneration(BiomeGenerationSettings.Builder builder)
@@ -37,9 +37,8 @@ public class OverworldBiomes {
     }
 
     //biomes
-    public static Biome hallowPlains() {
+    public static Biome hallowLands() {
         MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
-        spawnBuilder.addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntitiesRegister.OULISK.get(), 5, 1, 3));
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
 
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
@@ -49,6 +48,7 @@ public class OverworldBiomes {
         BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultGrass(biomeBuilder);
         BiomeDefaultFeatures.addInfestedStone(biomeBuilder);
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 1F, 0.9F, 58853, 12198353, 58853, spawnBuilder, biomeBuilder, NORMAL_MUSIC);
+
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 1F, 0.9F, 58853, 12198353, 58853, new AmbientParticleSettings(ParticleRegister.HALLOW_BIOME_AMBIENT_PARTICLES.get(), 0.004F), spawnBuilder, biomeBuilder, Musics.createGameMusic(SoundRegister.HALLOW_BIOME_MUSIC.get()));
     }
 }

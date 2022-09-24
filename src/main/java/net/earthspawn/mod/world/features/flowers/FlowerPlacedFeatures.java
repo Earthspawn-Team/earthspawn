@@ -10,14 +10,14 @@ import net.minecraft.world.level.levelgen.placement.RarityFilter;
 public class FlowerPlacedFeatures {
 
     public static final Holder<PlacedFeature> GLADIOLUS = PlacementUtils.register("gladiolus_placed",
-            FlowerConfiguredFeatures.GLADIOLUS, RarityFilter.onAverageOnceEvery(18),
+            FlowerConfiguredFeatures.GLADIOLUS, RarityFilter.onAverageOnceEvery(6),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
     public static final Holder<PlacedFeature> HALLOW_ROOTS = PlacementUtils.register("hallow_roots_placed",
-            FlowerConfiguredFeatures.HALLOW_ROOTS, RarityFilter.onAverageOnceEvery(32),
+            FlowerConfiguredFeatures.HALLOW_ROOTS, RarityFilter.onAverageOnceEvery(6),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 
     public static final Holder<PlacedFeature> AMARYLLIS = PlacementUtils.register("amaryllis_placed",
-            FlowerConfiguredFeatures.AMARYLLIS, RarityFilter.onAverageOnceEvery(18),
+            FlowerConfiguredFeatures.AMARYLLIS, RarityFilter.onAverageOnceEvery(6),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 }

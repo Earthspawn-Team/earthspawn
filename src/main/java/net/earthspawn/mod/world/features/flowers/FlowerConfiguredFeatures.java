@@ -14,16 +14,16 @@ public class FlowerConfiguredFeatures {
 
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> GLADIOLUS =
             FeatureUtils.register("gladiolus_configured", Feature.FLOWER,
-                    new RandomPatchConfiguration(128, 6, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                    new RandomPatchConfiguration(100, 6, 6, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(BlockRegister.GLADIOLUS.get())))));
 
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> HALLOW_ROOTS =
             FeatureUtils.register("hallow_roots_configured", Feature.FLOWER,
-                    new RandomPatchConfiguration(64, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                    new RandomPatchConfiguration(100, 6, 6, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(BlockRegister.HALLOW_ROOTS.get())))));
 
     public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> AMARYLLIS =
             FeatureUtils.register("amaryllis_configured", Feature.FLOWER,
-                    new RandomPatchConfiguration(42, 4, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                    new RandomPatchConfiguration(100, 4, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(BlockRegister.AMARYLLIS.get())))));
 }

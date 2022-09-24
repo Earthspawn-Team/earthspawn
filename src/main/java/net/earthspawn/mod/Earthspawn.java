@@ -33,6 +33,8 @@ public class Earthspawn {
         BlockRegister.registerSetup(bus);
         EntitiesRegister.registerSetup(bus);
         ItemRegister.registerSetup(bus);
+        ParticleRegister.registerSetup(bus);
+        SoundRegister.registerSetup(bus);
         BiomeRegister.registerSetup(bus);
         MinecraftForge.EVENT_BUS.register(this);
     }
