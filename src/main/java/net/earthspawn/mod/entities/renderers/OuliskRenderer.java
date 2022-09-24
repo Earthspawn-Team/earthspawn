@@ -16,8 +16,6 @@ import software.bernie.geckolib3.renderers.geo.IGeoRenderer;
 
 public class OuliskRenderer extends GeoEntityRenderer<OuliskEntity> {
 
-    private float rotationAngle;
-
     public OuliskRenderer(EntityRendererProvider.Context renderManager) {
         super(renderManager, new OuliskModel());
         this.addLayer(new OuliskGlowLayer<>(this));

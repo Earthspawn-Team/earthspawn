@@ -2,19 +2,22 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "##",
-    "#/",
-    " /"
+    "/ ",
+    "o "
   ],
   "key": {
     "#": {
-      "item": "earthspawn:topaz"
+      "item": "earthspawn:crystal"
+    },
+    "o": {
+      "item": "earthspawn:crystal_shard"
     },
     "/": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "earthspawn:topaz_axe",
+    "item": "earthspawn:crystal_hoe",
     "count": 1
   }
 }

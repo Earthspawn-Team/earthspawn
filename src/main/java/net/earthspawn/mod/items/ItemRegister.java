@@ -5,6 +5,8 @@ import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.items.armors.ArmorTiers;
 import net.earthspawn.mod.items.armors.classes.CrystalArmorItem;
 import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
+import net.earthspawn.mod.items.ranged.CrystalBowItem;
+import net.earthspawn.mod.items.shields.CrystalShieldItem;
 import net.earthspawn.mod.tabs.EarthspawnTab;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.*;
@@ -14,7 +16,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import software.bernie.example.item.PotatoArmorItem;
 
 @Mod.EventBusSubscriber(modid = Earthspawn.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ItemRegister {
@@ -52,6 +53,22 @@ public class ItemRegister {
             () -> new TopazArmorItem(ArmorTiers.TOPAZ, EquipmentSlot.FEET, new Item.Properties()));
 
     //crystal tier
+
+    public static final RegistryObject<CrystalShieldItem> CRYSTAL_SHIELD = ITEMS.register("crystal_shield",
+            () -> new CrystalShieldItem(EarthspawnTab.itemTabProperties().durability(2124)));
+
+    public static final RegistryObject<Item> CRYSTAL_SWORD = ITEMS.register("crystal_sword",
+            () -> new SwordItem(ItemTiers.CRYSTAL, 3, -2.4F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> CRYSTAL_PICKAXE = ITEMS.register("crystal_pickaxe",
+            () -> new PickaxeItem(ItemTiers.CRYSTAL, 1, -2.8F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> CRYSTAL_AXE = ITEMS.register("crystal_axe",
+            () -> new AxeItem(ItemTiers.CRYSTAL, 5.0F, -3.0F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> CRYSTAL_SHOVEL = ITEMS.register("crystal_shovel",
+            () -> new ShovelItem(ItemTiers.CRYSTAL, 1.5F, -3.0F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<Item> CRYSTAL_HOE = ITEMS.register("crystal_hoe",
+            () -> new HoeItem(ItemTiers.CRYSTAL, 3, -3.0F, EarthspawnTab.itemTabProperties()));
+    public static final RegistryObject<BowItem> CRYSTAL_BOW = ITEMS.register("crystal_bow",
+            () -> new CrystalBowItem(EarthspawnTab.itemTabProperties().durability(2124)));
     public static final RegistryObject<CrystalArmorItem> CRYSTAL_HELMET = ITEMS.register("crystal_helmet",
             () -> new CrystalArmorItem(ArmorTiers.CRYSTAL, EquipmentSlot.HEAD, new Item.Properties()));
     public static final RegistryObject<CrystalArmorItem> CRYSTAL_CHESTPLATE = ITEMS.register("crystal_chestplate",
