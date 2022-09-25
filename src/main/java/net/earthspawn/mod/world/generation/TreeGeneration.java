@@ -20,6 +20,7 @@ public class TreeGeneration {
             List<Holder<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
             base.add(TreePlacedFeatures.HALLOW_TREE);
+            base.add(TreePlacedFeatures.LARGE_HALLOW_TREE);
         }
     }
 }
