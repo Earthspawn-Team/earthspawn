@@ -51,7 +51,12 @@ public class TreeConfiguredFeatures {
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> HALLOW_TREE_SPAWN =
             FeatureUtils.register("hallow_tree_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(
-                            new WeightedPlacedFeature(HALLOW_TREE_CHECK, 0.5F),
-                            new WeightedPlacedFeature(LARGE_HALLOW_TREE_CHECK, 0.5F)),
+                            new WeightedPlacedFeature(HALLOW_TREE_CHECK, 1F)),
+                            HALLOW_TREE_CHECK));
+
+    public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> LARGE_HALLOW_TREE_SPAWN =
+            FeatureUtils.register("large_hallow_tree_spawn", Feature.RANDOM_SELECTOR,
+                    new RandomFeatureConfiguration(List.of(
+                            new WeightedPlacedFeature(LARGE_HALLOW_TREE_CHECK, 1F)),
                             HALLOW_TREE_CHECK));
 }
