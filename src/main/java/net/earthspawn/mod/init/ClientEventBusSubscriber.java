@@ -7,10 +7,7 @@ import net.earthspawn.mod.entities.classes.AcphinesEntity;
 import net.earthspawn.mod.entities.classes.CrystalStalkerEntity;
 import net.earthspawn.mod.entities.classes.GoblinEntity;
 import net.earthspawn.mod.entities.classes.OuliskEntity;
-import net.earthspawn.mod.entities.renderers.AcphinesRenderer;
-import net.earthspawn.mod.entities.renderers.CrystalStalkerRenderer;
-import net.earthspawn.mod.entities.renderers.GoblinRenderer;
-import net.earthspawn.mod.entities.renderers.OuliskRenderer;
+import net.earthspawn.mod.entities.renderers.*;
 import net.earthspawn.mod.items.ItemRegister;
 import net.earthspawn.mod.items.ModItemProperties;
 import net.earthspawn.mod.items.armors.classes.CrystalArmorItem;
@@ -54,6 +51,7 @@ public class ClientEventBusSubscriber {
         EntityRenderers.register(EntitiesRegister.ACPHINES.get(), AcphinesRenderer::new);
         EntityRenderers.register(EntitiesRegister.GOBLIN.get(), GoblinRenderer::new);
         EntityRenderers.register(EntitiesRegister.CRYSTAL_STALKER.get(), CrystalStalkerRenderer::new);
+        EntityRenderers.register(EntitiesRegister.FLYING_MOB.get(), FlyingMobRenderer::new);
 
         //transparent block render setup
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.GLADIOLUS.get(), RenderType.cutout());
@@ -62,7 +60,7 @@ public class ClientEventBusSubscriber {
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.HALLOW_LEAVES.get(), RenderType.cutout());
         ItemBlockRenderTypes.setRenderLayer(BlockRegister.HALLOW_SAPLING.get(), RenderType.cutout());
 
-        //mod item properties setup (for custom bow)
+        //mod item properties setup (for custom bow)4
         ModItemProperties.addCustomItemProperties();
 
         //biome region setup
@@ -86,6 +84,7 @@ public class ClientEventBusSubscriber {
         event.put(EntitiesRegister.ACPHINES.get(), AcphinesEntity.setAttributes());
         event.put(EntitiesRegister.GOBLIN.get(), GoblinEntity.setAttributes());
         event.put(EntitiesRegister.CRYSTAL_STALKER.get(), CrystalStalkerEntity.setAttributes());
+        event.put(EntitiesRegister.FLYING_MOB.get(), CrystalStalkerEntity.setAttributes());
     }
 
     @SubscribeEvent

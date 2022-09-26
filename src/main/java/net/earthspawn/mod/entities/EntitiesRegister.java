@@ -1,10 +1,7 @@
 package net.earthspawn.mod.entities;
 
 import net.earthspawn.mod.Earthspawn;
-import net.earthspawn.mod.entities.classes.AcphinesEntity;
-import net.earthspawn.mod.entities.classes.CrystalStalkerEntity;
-import net.earthspawn.mod.entities.classes.GoblinEntity;
-import net.earthspawn.mod.entities.classes.OuliskEntity;
+import net.earthspawn.mod.entities.classes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
@@ -35,6 +32,11 @@ public class EntitiesRegister {
             () -> EntityType.Builder.of(CrystalStalkerEntity::new, MobCategory.CREATURE)
                     .sized(1.1f, 1.4f)
                     .build(new ResourceLocation(Earthspawn.MOD_ID, "crystal_stalker").toString()));
+
+    public static final RegistryObject<EntityType<FlyingMobEntity>> FLYING_MOB = ENTITY_TYPES.register("flying_mob",
+            () -> EntityType.Builder.of(FlyingMobEntity::new, MobCategory.CREATURE)
+                    .sized(1.1f, 1.4f)
+                    .build(new ResourceLocation(Earthspawn.MOD_ID, "flying_mob").toString()));
 
     public static void registerSetup(IEventBus bus) {
         ENTITY_TYPES.register(bus);

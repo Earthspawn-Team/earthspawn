@@ -1,0 +1,9 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.flying_mob.new": {
+			"loop": true
+		}
+	},
+	"geckolib_format_version": 2
+}
