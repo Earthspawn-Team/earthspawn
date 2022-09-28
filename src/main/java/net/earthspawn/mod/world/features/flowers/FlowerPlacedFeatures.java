@@ -20,4 +20,8 @@ public class FlowerPlacedFeatures {
     public static final Holder<PlacedFeature> AMARYLLIS = PlacementUtils.register("amaryllis_placed",
             FlowerConfiguredFeatures.AMARYLLIS, RarityFilter.onAverageOnceEvery(6),
             InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
+
+    public static final Holder<PlacedFeature> GREEN_MUSHROOM = PlacementUtils.register("green_mushroom_placed",
+            FlowerConfiguredFeatures.GREEN_MUSHROOM, RarityFilter.onAverageOnceEvery(6),
+            InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome());
 }

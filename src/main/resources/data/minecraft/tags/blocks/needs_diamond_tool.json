@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "earthspawn:topaz_ore"
+    "earthspawn:topaz_ore",
+    "earthspawn:astral_ore"
   ]
 }

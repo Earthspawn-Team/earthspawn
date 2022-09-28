@@ -21,4 +21,9 @@ public class OrePlacedFeatures {
             OreConfiguredFeatures.TOPAZ_ORE_GENERATION, commonOrePlacement(2, HeightRangePlacement.triangle(
                             VerticalAnchor.aboveBottom(-80),
                             VerticalAnchor.aboveBottom(80))));
+
+    public static final Holder<PlacedFeature> ASTRAL_ORE_GENERATION = PlacementUtils.register("astral_ore_placed",
+            OreConfiguredFeatures.ASTRAL_ORE_GENERATION, commonOrePlacement(3, HeightRangePlacement.triangle(
+                    VerticalAnchor.aboveBottom(-80),
+                    VerticalAnchor.aboveBottom(80))));
 }

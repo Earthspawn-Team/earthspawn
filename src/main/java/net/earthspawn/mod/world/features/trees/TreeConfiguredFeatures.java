@@ -5,17 +5,18 @@ import net.minecraft.core.Holder;
 import net.minecraft.data.worldgen.features.FeatureUtils;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.HugeMushroomBlock;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
+import net.minecraft.world.level.levelgen.feature.configurations.HugeMushroomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
-import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FancyFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
 import net.minecraft.world.level.levelgen.feature.trunkplacers.FancyTrunkPlacer;
-import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 import java.util.List;
@@ -40,6 +41,11 @@ public class TreeConfiguredFeatures {
                     new FancyFoliagePlacer(ConstantInt.of(3), ConstantInt.of(4), 4),
                     new TwoLayersFeatureSize(1, 0, 1, OptionalInt.of(4))).build());
 
+    public static final Holder<ConfiguredFeature<HugeMushroomFeatureConfiguration, ?>> HUGE_GREEN_MUSHROOM =
+            FeatureUtils.register("huge_green_mushroom", Feature.HUGE_RED_MUSHROOM, new HugeMushroomFeatureConfiguration(
+                    BlockStateProvider.simple(BlockRegister.GREEN_MUSHROOM_BLOCK.get().defaultBlockState().setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)),
+                    BlockStateProvider.simple(Blocks.MUSHROOM_STEM.defaultBlockState().setValue(HugeMushroomBlock.UP, Boolean.FALSE).setValue(HugeMushroomBlock.DOWN, Boolean.FALSE)), 1));
+
     //trees placement check
     public static final Holder<PlacedFeature> HALLOW_TREE_CHECK = PlacementUtils.register("hallow_tree_check", TreeConfiguredFeatures.HALLOW_TREE,
             PlacementUtils.filteredByBlockSurvival(BlockRegister.HALLOW_SAPLING.get()));
@@ -51,12 +57,12 @@ public class TreeConfiguredFeatures {
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> HALLOW_TREE_SPAWN =
             FeatureUtils.register("hallow_tree_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(
-                            new WeightedPlacedFeature(HALLOW_TREE_CHECK, 1F)),
+                            new WeightedPlacedFeature(HALLOW_TREE_CHECK, 1f)),
                             HALLOW_TREE_CHECK));
 
     public static final Holder<ConfiguredFeature<RandomFeatureConfiguration, ?>> LARGE_HALLOW_TREE_SPAWN =
             FeatureUtils.register("large_hallow_tree_spawn", Feature.RANDOM_SELECTOR,
                     new RandomFeatureConfiguration(List.of(
-                            new WeightedPlacedFeature(LARGE_HALLOW_TREE_CHECK, 1F)),
+                            new WeightedPlacedFeature(LARGE_HALLOW_TREE_CHECK, 1f)),
                             HALLOW_TREE_CHECK));
 }
