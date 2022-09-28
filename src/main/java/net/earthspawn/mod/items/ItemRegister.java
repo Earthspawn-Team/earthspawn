@@ -5,6 +5,7 @@ import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.items.armors.ArmorTiers;
 import net.earthspawn.mod.items.armors.classes.CrystalArmorItem;
 import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
+import net.earthspawn.mod.items.melees.UnicornSpearItem;
 import net.earthspawn.mod.items.ranged.CrystalBowItem;
 import net.earthspawn.mod.items.shields.CrystalShieldItem;
 import net.earthspawn.mod.tabs.EarthspawnTab;
@@ -77,6 +78,10 @@ public class ItemRegister {
             () -> new CrystalArmorItem(ArmorTiers.CRYSTAL, EquipmentSlot.LEGS, new Item.Properties()));
     public static final RegistryObject<CrystalArmorItem> CRYSTAL_BOOTS = ITEMS.register("crystal_boots",
             () -> new CrystalArmorItem(ArmorTiers.CRYSTAL, EquipmentSlot.FEET, new Item.Properties()));
+
+    //astral tier
+    public static final RegistryObject<Item> UNICORN_SPEAR = ITEMS.register("unicorn_spear",
+            () -> new UnicornSpearItem(ItemTiers.ASTRAL, 2, -2f, EarthspawnTab.itemTabProperties()));
 
     //spawn eggs
     public static final RegistryObject<Item> OULISK_SPAWN_EGG = ITEMS.register("oulisk_spawn_egg",

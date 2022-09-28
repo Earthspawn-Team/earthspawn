@@ -14,6 +14,15 @@ public class ItemTiers {
             null,
             () -> Ingredient.of(ItemRegister.TOPAZ.get()));
 
+    public static final Tier ASTRAL = new ForgeTier(
+            3,
+            956,
+            8.5F,
+            3.5F,
+            14,
+            null,
+            () -> Ingredient.of(ItemRegister.ASTRAL_DUST.get()));
+
     public static final Tier CRYSTAL = new ForgeTier(
             4,
             2124,

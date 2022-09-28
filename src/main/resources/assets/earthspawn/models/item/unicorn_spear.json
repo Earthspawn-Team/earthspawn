@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "earthspawn:items/unicorn_spear"
+  }
+}
