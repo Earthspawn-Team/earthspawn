@@ -15,13 +15,13 @@ import java.util.List;
 public class FlowerGeneration {
 
     public static void generateFlowers(final BiomeLoadingEvent event) {
-
         if(event.getName().equals(BiomeRegister.HALLOW_LANDS.get().getRegistryName())) {
             List<Holder<PlacedFeature>> base = event.getGeneration().getFeatures(GenerationStep.Decoration.VEGETAL_DECORATION);
 
             base.add(FlowerPlacedFeatures.GLADIOLUS);
             base.add(FlowerPlacedFeatures.HALLOW_ROOTS);
             base.add(FlowerPlacedFeatures.AMARYLLIS);
+            base.add(FlowerPlacedFeatures.GREEN_MUSHROOM);
         }
     }
 }

@@ -26,4 +26,9 @@ public class FlowerConfiguredFeatures {
             FeatureUtils.register("amaryllis_configured", Feature.FLOWER,
                     new RandomPatchConfiguration(100, 4, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                             new SimpleBlockConfiguration(BlockStateProvider.simple(BlockRegister.AMARYLLIS.get())))));
+
+    public static final Holder<ConfiguredFeature<RandomPatchConfiguration, ?>> GREEN_MUSHROOM =
+            FeatureUtils.register("green_mushroom_configured", Feature.FLOWER,
+                    new RandomPatchConfiguration(50, 4, 4, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(BlockRegister.GREEN_MUSHROOM.get())))));
 }

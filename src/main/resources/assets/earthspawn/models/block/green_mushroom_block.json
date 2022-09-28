@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "earthspawn:blocks/green_mushroom_block"
+  }
+}

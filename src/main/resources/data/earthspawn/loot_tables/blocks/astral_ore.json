@@ -25,11 +25,20 @@
                   }
                 }
               ],
-              "name": "earthspawn:topaz_ore"
+              "name": "earthspawn:astral_ore"
             },
             {
               "type": "minecraft:item",
               "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": {
+                    "type": "minecraft:uniform",
+                    "min": 1.0,
+                    "max": 3.0
+                  },
+                  "add": false
+                },
                 {
                   "function": "minecraft:apply_bonus",
                   "enchantment": "minecraft:fortune",
@@ -39,7 +48,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "earthspawn:topaz"
+              "name": "earthspawn:astral_dust"
             }
           ]
         }
