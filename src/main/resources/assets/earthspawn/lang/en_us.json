@@ -49,5 +49,8 @@
   "item.earthspawn.crystal_shard": "Crystal Shard",
   "item.earthspawn.astral_dust": "Astral Dust",
   "item.earthspawn.charged_crystal": "Charged Crystal",
-  "item.earthspawn.unicorn_horn": "Unicorn Horn"
+  "item.earthspawn.unicorn_horn": "Unicorn Horn",
+
+  "key.earthspawn.mount_descent_key": "Mount descent",
+  "key.category.earthspawn": "Earthspawn"
 }

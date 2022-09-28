@@ -13,11 +13,10 @@ import net.minecraftforge.fml.common.Mod;
 public class WorldEvents {
 
     @SubscribeEvent
-    static void worldSetup(final BiomeLoadingEvent event) {
+    public static void worldSetup(final BiomeLoadingEvent event) {
         OreGeneration.generateOres(event);
         TreeGeneration.generateTrees(event);
         FlowerGeneration.generateFlowers(event);
         EntityNaturalGeneration.onEntitySpawn(event);
     }
-
 }

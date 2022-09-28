@@ -81,7 +81,7 @@ public class CrystalStalkerEntity extends Animal implements IAnimatable, Neutral
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (event.getLimbSwing() != 0.0f) {
+        if (event.getLimbSwingAmount() != 0.0f) {
             event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.crystal_stalker.walk", true));
             event.getController().setAnimationSpeed(event.getLimbSwingAmount() * 3.4f);
             return  PlayState.CONTINUE;
