@@ -24,8 +24,9 @@ public class UnicornSpearItem extends SwordItem {
     }
 
     @Override
-    public void appendHoverText(ItemStack p_41421_, @Nullable Level p_41422_, List<Component> p_41423_, TooltipFlag p_41424_) {
-        super.appendHoverText(p_41421_, p_41422_, p_41423_, p_41424_);
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
+        components.add(new TranslatableComponent("item.earthspawn.unicorn_spear.lore"));
+        super.appendHoverText(itemStack, level, components, flag);
     }
 
     public UnicornSpearItem(Tier p_43269_, int p_43270_, float p_43271_, Properties p_43272_) {
