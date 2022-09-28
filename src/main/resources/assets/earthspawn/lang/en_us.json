@@ -27,11 +27,12 @@
   "item.earthspawn.topaz_boots": "Topaz Boots",
 
   "item.earthspawn.unicorn_spear": "Unicorn Spear",
-  "item.earthspawn.unicorn_spear.lore": "§7Life Steal",
+  "item.earthspawn.unicorn_spear.description": "§7Life Steal",
 
   "item.earthspawn.crystal_shield": "Crystal Shield",
   "item.earthspawn.crystal_bow": "Crystal Bow",
   "item.earthspawn.crystal_sword": "Crystal Sword",
+  "item.earthspawn.crystal_sword.description": "§7Astral Malediction",
   "item.earthspawn.crystal_pickaxe": "Crystal Pickaxe",
   "item.earthspawn.crystal_axe": "Crystal Axe",
   "item.earthspawn.crystal_shovel": "Crystal Shovel",

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  #",
+    " D ",
+    "/  "
+  ],
+  "key": {
+    "#": {
+      "item": "earthspawn:unicorn_horn"
+    },
+    "D": {
+      "item": "earthspawn:astral_dust"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "earthspawn:unicorn_spear",
+    "count": 1
+  }
+}

@@ -5,6 +5,7 @@ import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.items.armors.ArmorTiers;
 import net.earthspawn.mod.items.armors.classes.CrystalArmorItem;
 import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
+import net.earthspawn.mod.items.melees.CrystalSwordItem;
 import net.earthspawn.mod.items.melees.UnicornSpearItem;
 import net.earthspawn.mod.items.ranged.CrystalBowItem;
 import net.earthspawn.mod.items.shields.CrystalShieldItem;
@@ -59,7 +60,7 @@ public class ItemRegister {
             () -> new CrystalShieldItem(EarthspawnTab.itemTabProperties().durability(2124)));
 
     public static final RegistryObject<Item> CRYSTAL_SWORD = ITEMS.register("crystal_sword",
-            () -> new SwordItem(ItemTiers.CRYSTAL, 3, -2.4F, EarthspawnTab.itemTabProperties()));
+            () -> new CrystalSwordItem(ItemTiers.CRYSTAL, 3, -2.4F, EarthspawnTab.itemTabProperties()));
     public static final RegistryObject<Item> CRYSTAL_PICKAXE = ITEMS.register("crystal_pickaxe",
             () -> new PickaxeItem(ItemTiers.CRYSTAL, 1, -2.8F, EarthspawnTab.itemTabProperties()));
     public static final RegistryObject<Item> CRYSTAL_AXE = ITEMS.register("crystal_axe",
