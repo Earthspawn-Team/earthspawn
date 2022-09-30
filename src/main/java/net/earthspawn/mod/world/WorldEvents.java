@@ -19,5 +19,4 @@ public class WorldEvents {
         FlowerGeneration.generateFlowers(event);
         EntityNaturalGeneration.onEntitySpawn(event);
     }
-
 }

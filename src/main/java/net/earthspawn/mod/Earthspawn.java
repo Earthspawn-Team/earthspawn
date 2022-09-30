@@ -3,12 +3,12 @@ package net.earthspawn.mod;
 import com.mojang.logging.LogUtils;
 import net.earthspawn.mod.entities.EntitiesRegister;
 import net.earthspawn.mod.blocks.BlockRegister;
+import net.earthspawn.mod.init.CommonEventBusSubscriber;
 import net.earthspawn.mod.items.ItemRegister;
 import net.earthspawn.mod.init.ClientEventBusSubscriber;
 import net.earthspawn.mod.particles.ParticleRegister;
 import net.earthspawn.mod.sounds.SoundRegister;
 import net.earthspawn.mod.world.biomes.BiomeRegister;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -29,6 +29,7 @@ public class Earthspawn {
     private void registerContent() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         bus.addListener(ClientEventBusSubscriber::clientRegisterSetup);
+        bus.addListener(CommonEventBusSubscriber::commonRegisterSetup);
 
         GeckoLib.initialize();
         BlockRegister.registerSetup(bus);
@@ -37,6 +38,5 @@ public class Earthspawn {
         ParticleRegister.registerSetup(bus);
         SoundRegister.registerSetup(bus);
         BiomeRegister.registerSetup(bus);
-        MinecraftForge.EVENT_BUS.register(this);
     }
 }
