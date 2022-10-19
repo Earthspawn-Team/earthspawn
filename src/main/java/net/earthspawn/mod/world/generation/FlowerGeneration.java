@@ -1,17 +1,14 @@
 package net.earthspawn.mod.world.generation;
 
-import net.earthspawn.mod.Earthspawn;
 import net.earthspawn.mod.world.biomes.BiomeRegister;
 import net.earthspawn.mod.world.features.flowers.FlowerPlacedFeatures;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
-import net.minecraftforge.fml.common.Mod;
 
 import java.util.List;
 
-@Mod.EventBusSubscriber(modid = Earthspawn.MOD_ID)
 public class FlowerGeneration {
 
     public static void generateFlowers(final BiomeLoadingEvent event) {

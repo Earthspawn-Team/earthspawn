@@ -1,10 +1,7 @@
 package net.earthspawn.mod.world;
 
 import net.earthspawn.mod.Earthspawn;
-import net.earthspawn.mod.world.generation.EntityNaturalGeneration;
-import net.earthspawn.mod.world.generation.FlowerGeneration;
-import net.earthspawn.mod.world.generation.OreGeneration;
-import net.earthspawn.mod.world.generation.TreeGeneration;
+import net.earthspawn.mod.world.generation.*;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +14,7 @@ public class WorldEvents {
         OreGeneration.generateOres(event);
         TreeGeneration.generateTrees(event);
         FlowerGeneration.generateFlowers(event);
+        GeodeGeneration.generateGeodes(event);
         EntityNaturalGeneration.onEntitySpawn(event);
     }
 }

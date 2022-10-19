@@ -16,7 +16,7 @@ public class EarthspawnTab extends CreativeModeTab {
     }
 
     public static Item.Properties itemTabProperties() {
-        return new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB);
+        return new Item.Properties().tab(CREATIVE_TAB);
     }
 
     @Override
