@@ -1,7 +1,7 @@
 package net.earthspawn.mod;
 
 import com.mojang.logging.LogUtils;
-import net.earthspawn.mod.entities.EntitiesRegister;
+import net.earthspawn.mod.entities.EntityRegister;
 import net.earthspawn.mod.blocks.BlockRegister;
 import net.earthspawn.mod.init.CommonEventBusSubscriber;
 import net.earthspawn.mod.items.ItemRegister;
@@ -18,25 +18,28 @@ import software.bernie.geckolib3.GeckoLib;
 @Mod(Earthspawn.MOD_ID)
 public class Earthspawn {
 
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
     public static final String MOD_ID = "earthspawn";
 
     public Earthspawn() {
-        LOGGER.debug("Earthspawn Pre-init Setup");
-        registerContent();
+        Loader.initialize();
     }
 
-    private void registerContent() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
-        bus.addListener(ClientEventBusSubscriber::clientRegisterSetup);
-        bus.addListener(CommonEventBusSubscriber::commonRegisterSetup);
+    public static class Loader {
+        static IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        GeckoLib.initialize();
-        BlockRegister.registerSetup(bus);
-        EntitiesRegister.registerSetup(bus);
-        ItemRegister.registerSetup(bus);
-        ParticleRegister.registerSetup(bus);
-        SoundRegister.registerSetup(bus);
-        BiomeRegister.registerSetup(bus);
+        public static void initialize() {
+            LOGGER.debug("Earthspawn Pre-init Setup");
+            bus.addListener(ClientEventBusSubscriber::clientRegisterSetup);
+            bus.addListener(CommonEventBusSubscriber::commonRegisterSetup);
+
+            GeckoLib.initialize();
+            BlockRegister.registerSetup(bus);
+            EntityRegister.registerSetup(bus);
+            ItemRegister.registerSetup(bus);
+            ParticleRegister.registerSetup(bus);
+            SoundRegister.registerSetup(bus);
+            BiomeRegister.registerSetup(bus);
+        }
     }
 }

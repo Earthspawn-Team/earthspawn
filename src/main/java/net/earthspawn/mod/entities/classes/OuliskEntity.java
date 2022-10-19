@@ -1,7 +1,7 @@
 package net.earthspawn.mod.entities.classes;
 
 import net.earthspawn.mod.blocks.BlockRegister;
-import net.earthspawn.mod.entities.EntitiesRegister;
+import net.earthspawn.mod.entities.EntityRegister;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.entity.EntityType;
@@ -9,10 +9,8 @@ import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import org.jetbrains.annotations.Nullable;
@@ -55,7 +53,7 @@ public class OuliskEntity extends Animal implements IAnimatable {
     @Nullable
     @Override
     public OuliskEntity getBreedOffspring(ServerLevel serverLevel, AgeableMob mob) {
-        return EntitiesRegister.OULISK.get().create(serverLevel);
+        return EntityRegister.OULISK.get().create(serverLevel);
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {

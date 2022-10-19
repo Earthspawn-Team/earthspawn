@@ -13,7 +13,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class EntitiesRegister {
+public class EntityRegister {
     public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Earthspawn.MOD_ID);
 
     public static final RegistryObject<EntityType<OuliskEntity>> OULISK = ENTITY_TYPES.register("oulisk",

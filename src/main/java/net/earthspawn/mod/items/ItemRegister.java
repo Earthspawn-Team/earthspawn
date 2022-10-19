@@ -1,7 +1,7 @@
 package net.earthspawn.mod.items;
 
 import net.earthspawn.mod.Earthspawn;
-import net.earthspawn.mod.entities.EntitiesRegister;
+import net.earthspawn.mod.entities.EntityRegister;
 import net.earthspawn.mod.items.armors.ArmorTiers;
 import net.earthspawn.mod.items.armors.classes.CrystalArmorItem;
 import net.earthspawn.mod.items.armors.classes.TopazArmorItem;
@@ -86,15 +86,15 @@ public class ItemRegister {
 
     //spawn eggs
     public static final RegistryObject<Item> OULISK_SPAWN_EGG = ITEMS.register("oulisk_spawn_egg",
-            () -> new ForgeSpawnEggItem(EntitiesRegister.OULISK, 0x8f0099, 0x00fffb,
+            () -> new ForgeSpawnEggItem(EntityRegister.OULISK, 0x8f0099, 0x00fffb,
                     new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
     public static final RegistryObject<Item> ACPHINES_SPAWN_EGG = ITEMS.register("acphines_spawn_egg",
-            () -> new ForgeSpawnEggItem(EntitiesRegister.ACPHINES, 0x4d4d4d, 0x00fffb,
+            () -> new ForgeSpawnEggItem(EntityRegister.ACPHINES, 0x4d4d4d, 0x00fffb,
                     new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
     public static final RegistryObject<Item> GOBLIN_SPAWN_EGG = ITEMS.register("goblin_spawn_egg",
-            () -> new ForgeSpawnEggItem(EntitiesRegister.GOBLIN, 0x355400, 0x543107,
+            () -> new ForgeSpawnEggItem(EntityRegister.GOBLIN, 0x355400, 0x543107,
                     new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
     public static final RegistryObject<Item> CRYSTAL_STALKER_SPAWN_EGG = ITEMS.register("crystal_stalker_spawn_egg",
-            () -> new ForgeSpawnEggItem(EntitiesRegister.CRYSTAL_STALKER, 0x4d8d8f, 0x00fffb,
+            () -> new ForgeSpawnEggItem(EntityRegister.CRYSTAL_STALKER, 0x4d8d8f, 0x00fffb,
                     new Item.Properties().tab(EarthspawnTab.CREATIVE_TAB)));
 }
